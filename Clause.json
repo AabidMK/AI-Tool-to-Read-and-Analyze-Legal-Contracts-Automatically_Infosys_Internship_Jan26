@@ -1,0 +1,90 @@
+[{
+        "contract_type": " Service Agreement",
+        "clauses": [{
+                "clause_title": "Scope of Services",
+                "clause_text": "The Service Provider agrees to perform the services described in Schedule A in a competent and professional manner consistent with industry standards.",
+                "metadata": {
+                    "jurisdiction": "India",
+                    "last_updated": "07-01-2026"
+                }
+            },
+            {
+                "clause_title": "Term and Termination",
+                "clause_text": "This Agreement shall commence on the Effective Date and continue until terminated by either party upon thirty (30) days’ prior written notice to the other party.",
+                "metadata": {
+                    "jurisdiction": "India",
+                    "last_updated": "07-01-2026"
+                }
+            }
+        ]
+    },
+    {
+        "contract_type": "Non-Disclosure Agreement",
+        "clauses": [{
+                "clause_title": "Definition of Confidential Information",
+                "clause_text": "Confidential Information means all non-public, proprietary information disclosed by the Disclosing Party to the Receiving Party, whether oral, written, or electronic, that is reasonably understood to be confidential.",
+                "metadata": {
+                    "jurisdiction": "India",
+                    "category": "Definition",
+                    "last_updated": "07-01-2026"
+                }
+            },
+            {
+                "clause_title": "Obligations of Receiving Party",
+                "clause_text": "The Receiving Party shall protect Confidential Information with the same degree of care as its own confidential information, and shall not use or disclose it except as permitted in this Agreement.",
+                "metadata": {
+                    "jurisdiction": "India",
+                    "category": "Non-Disclosure",
+                    "last_updated": "07-01-2026"
+                }
+            }
+        ]
+    },
+    {
+        "contract_type": "Software License Agreement",
+        "clauses": [{
+                "clause_title": "License Grant",
+                "clause_text": "Subject to the terms of this Agreement, the Licensor grants the Licensee a non-exclusive, non-transferable license to use the software for internal business purposes.",
+                "metadata": {
+                    "jurisdiction": "India",
+                    "category": "License",
+                    "last_updated": "07-01-2026"
+                }
+            },
+            {
+                "clause_title": "Updates and Support",
+                "clause_text": "The Licensor shall provide software updates and technical support as described in Schedule B at no additional cost for the first twelve (12) months following the Effective Date.",
+                "metadata": {
+                    "jurisdiction": "India",
+                    "category": "Support",
+                    "last_updated": "07-01-2026"
+                }
+            }
+        ]
+    },
+    {
+        "contract_type": "Lease Agreement",
+        "clauses": [{
+                "clause_title": "Lease Term",
+                "clause_text": "The Tenant shall lease the premises described in Schedule A for the term beginning on the Effective Date and ending on the date specified in this Agreement, unless earlier terminated as provided herein.",
+                "metadata": {
+                    "jurisdiction": "India",
+                    "category": "Term",
+                    "risk_level": "Low",
+                    "last_updated": "07-01-2026"
+                }
+            },
+            {
+                "clause_title": "Rent and Payment",
+                "clause_text": "The Tenant shall pay the Landlord the monthly rent specified in Schedule B on or before the fifth (5th) day of each calendar month.",
+                "metadata": {
+                    "jurisdiction": "India",
+                    "category": "Financial",
+                    "risk_level": "Medium",
+                    "last_updated": "07-01-2026"
+                }
+            }
+
+        ]
+    }
+]
