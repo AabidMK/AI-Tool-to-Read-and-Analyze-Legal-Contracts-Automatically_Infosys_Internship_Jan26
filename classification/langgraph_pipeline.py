@@ -1,5 +1,3 @@
-# classification/langgraph_pipeline.py
-
 from typing import TypedDict
 
 from langgraph.graph import StateGraph, END
@@ -7,19 +5,13 @@ from langgraph.graph import StateGraph, END
 from parser.parser import extract_contract_text
 from classification.classification import classify_contract_node
 
-
-# -----------------------------
 # 1. Define Graph State
-# -----------------------------
 class ContractState(TypedDict):
     input_file: str
     contract_text: str
     result: dict
 
-
-# -----------------------------
 # 2. Define Classification Node
-# -----------------------------
 def classification_node(state: ContractState) -> ContractState:
     """
     LangGraph node:
@@ -40,9 +32,7 @@ def classification_node(state: ContractState) -> ContractState:
     }
 
 
-# -----------------------------
-# 3. Build the Graph
-# -----------------------------
+# 3. Build Graph
 def build_graph():
     graph = StateGraph(ContractState)
 
@@ -54,9 +44,7 @@ def build_graph():
     return graph.compile()
 
 
-# -----------------------------
 # 4. Run Graph
-# -----------------------------
 if __name__ == "__main__":
     app = build_graph()
 
