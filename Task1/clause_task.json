@@ -1,0 +1,185 @@
+[
+  {
+    "contract_type": "General Clauses",
+    "clauses": [
+      {
+        "clause_title": "Governing Law",
+        "clause_text": "This Agreement shall be governed by and construed in accordance with the laws of the applicable jurisdiction, without regard to its conflict of laws principles.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2024-06-01"
+        }
+      },
+      {
+        "clause_title": "Force Majeure",
+        "clause_text": "Neither Party shall be liable for failure or delay in performance under this Agreement due to events beyond reasonable control, including acts of God, war, terrorism, labor disputes, pandemics, or governmental actions.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.1",
+          "last_updated": "2024-06-01"
+        }
+      },
+      {
+        "clause_title": "Waiver",
+        "clause_text": "Failure by either Party to enforce any provision of this Agreement shall not constitute a waiver of future enforcement of that or any other provision.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2024-06-01"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Employment Agreement",
+    "clauses": [
+      {
+        "clause_title": "Termination",
+        "clause_text": "Either Party may terminate this Agreement by providing written notice in accordance with the notice period specified herein or immediately in the event of material breach.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "2.0",
+          "last_updated": "2024-06-01"
+        }
+      },
+      {
+        "clause_title": "Non-Compete",
+        "clause_text": "During the term of employment and for a specified period thereafter, the Employee shall not engage in any competing business activities as permitted under applicable law.",
+        "metadata": {
+          "jurisdiction": "India/USA",
+          "version": "1.2",
+          "last_updated": "2024-06-01"
+        }
+      },
+      {
+        "clause_title": "Employee Duties",
+        "clause_text": "The Employee shall faithfully perform duties assigned by the Company and comply with all applicable policies, procedures, and lawful instructions.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2024-06-01"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Non-Disclosure Agreement (NDA)",
+    "clauses": [
+      {
+        "clause_title": "Definition of Confidential Information",
+        "clause_text": "Confidential Information includes all non-public information disclosed by either Party, whether orally, in writing, or electronically, that is designated as confidential or reasonably understood to be confidential.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2024-06-01"
+        }
+      },
+      {
+        "clause_title": "Exclusions from Confidential Information",
+        "clause_text": "Confidential Information shall not include information that is publicly available, independently developed, or lawfully received from a third party without breach of obligation.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.1",
+          "last_updated": "2024-06-01"
+        }
+      },
+      {
+        "clause_title": "Duration of Confidentiality",
+        "clause_text": "The obligations of confidentiality shall survive termination of this Agreement for a period of five (5) years unless otherwise required by law.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2024-06-01"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Service Agreement",
+    "clauses": [
+      {
+        "clause_title": "Scope of Services",
+        "clause_text": "The Service Provider agrees to perform the services described in this Agreement in a professional and workmanlike manner.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2024-06-01"
+        }
+      },
+      {
+        "clause_title": "Payment Terms",
+        "clause_text": "The Client shall pay the Service Provider fees as specified in this Agreement within the agreed payment timeline.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.2",
+          "last_updated": "2024-06-01"
+        }
+      },
+      {
+        "clause_title": "Independent Contractor",
+        "clause_text": "Nothing in this Agreement shall be deemed to create an employer-employee, partnership, or joint venture relationship between the Parties.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2024-06-01"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Lease Agreement",
+    "clauses": [
+      {
+        "clause_title": "Rent and Security Deposit",
+        "clause_text": "The Tenant agrees to pay rent and a refundable security deposit as specified in this Agreement.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "1.0",
+          "last_updated": "2024-06-01"
+        }
+      },
+      {
+        "clause_title": "Maintenance and Repairs",
+        "clause_text": "The Tenant shall maintain the premises in good condition, subject to normal wear and tear.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "1.1",
+          "last_updated": "2024-06-01"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Technology / SaaS Agreement",
+    "clauses": [
+      {
+        "clause_title": "License Grant",
+        "clause_text": "The Company grants the Customer a limited, non-exclusive, non-transferable license to use the software during the term of this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2024-06-01"
+        }
+      },
+      {
+        "clause_title": "Data Protection",
+        "clause_text": "Each Party agrees to comply with applicable data protection laws and implement appropriate technical and organizational security measures.",
+        "metadata": {
+          "jurisdiction": "GDPR/Global",
+          "version": "1.2",
+          "last_updated": "2024-06-01"
+        }
+      },
+      {
+        "clause_title": "Limitation of Liability",
+        "clause_text": "In no event shall either Party be liable for indirect, incidental, or consequential damages arising out of this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.1",
+          "last_updated": "2024-06-01"
+        }
+      }
+    ]
+  }
+]

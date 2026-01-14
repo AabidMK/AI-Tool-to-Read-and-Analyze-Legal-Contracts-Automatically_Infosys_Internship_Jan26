@@ -1,0 +1,1 @@
+This Word document includes structured paragraphs and headings.

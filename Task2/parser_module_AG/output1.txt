@@ -1,0 +1,19 @@
+This document is created for the purpose of testing a file parsing system. It contains structured
+paragraphs that resemble a real-world document while remaining simple enough for demonstration.
+
+The objective of the parser module is to extract readable text from documents such as PDFs and Word
+files and convert them into plain text or Markdown format. This helps standardize content so it can be
+stored, searched, or processed further by other systems.
+
+In a typical workflow, a user uploads a document through an interface. The system first detects the file
+type and then applies the appropriate parsing logic. For PDF files, the text is extracted page by page. For
+Word documents, the text is read paragraph by paragraph.
+
+Once the content is extracted, unnecessary formatting is removed while preserving readability. The final
+output is saved as a .txt or .md file. This output can then be used for downstream tasks such as indexing,
+analysis, or summarization.
+
+This sample content is intentionally straightforward to clearly demonstrate how a parser module functions
+from input to output without introducing additional complexity.
+
+
