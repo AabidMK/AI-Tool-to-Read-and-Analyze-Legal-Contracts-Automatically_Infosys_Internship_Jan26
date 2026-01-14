@@ -1,0 +1,12 @@
+langchain
+langgraph
+langchain-core
+langchain-text-splitters
+openai
+pinecone
+streamlit
+pypdf
+python-docx
+python-dotenv
+tiktoken
+docling
