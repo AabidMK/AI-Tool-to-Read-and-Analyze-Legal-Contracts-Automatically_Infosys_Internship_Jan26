@@ -1,0 +1,225 @@
+{
+  "clauses": [
+    {
+      "contract_type": "General Clauses",
+      "clauses": [
+        {
+          "clause_title": "Force Majeure",
+          "clause_text": "Neither Party shall be liable for any failure or delay in the performance of its obligations under this Agreement if such failure or delay results from events beyond its reasonable control, including acts of God, war, terrorism, labor disputes, pandemics, governmental actions, or natural disasters. The affected Party shall promptly notify the other Party and use reasonable efforts to resume performance.",
+          "metadata": {
+            "jurisdiction": "Global/Standard",
+            "version": "1.0",
+            "last_updated": "2025-01-01"
+          }
+        },
+        {
+          "clause_title": "Waiver",
+          "clause_text": "No failure or delay by either Party in exercising any right, power, or remedy under this Agreement shall operate as a waiver thereof, nor shall any single or partial exercise of any such right, power, or remedy preclude any other or further exercise of the same or any other right, power, or remedy.",
+          "metadata": {
+            "jurisdiction": "Global/Standard",
+            "version": "1.0",
+            "last_updated": "2025-01-01"
+          }
+        },
+        {
+          "clause_title": "Governing Law and Jurisdiction",
+          "clause_text": "This Agreement shall be governed by and construed in accordance with the laws of the applicable jurisdiction specified in this Agreement, without regard to its conflict of laws principles. The courts of such jurisdiction shall have exclusive jurisdiction over any disputes arising out of or in connection with this Agreement.",
+          "metadata": {
+            "jurisdiction": "Global/Standard",
+            "version": "1.0",
+            "last_updated": "2025-01-01"
+          }
+        }
+      ]
+    },
+    {
+      "contract_type": "Employment Agreement",
+      "clauses": [
+        {
+          "clause_title": "Intellectual Property Ownership",
+          "clause_text": "All Intellectual Property created, conceived, developed, or reduced to practice by the Employee in the course of employment shall be the exclusive property of the Employer. To the extent any such work is not considered a work made for hire, the Employee hereby irrevocably assigns all right, title, and interest in such Intellectual Property to the Employer.",
+          "metadata": {
+            "jurisdiction": "USA/India",
+            "version": "1.1",
+            "last_updated": "2025-01-01"
+          }
+        },
+        {
+          "clause_title": "Confidentiality",
+          "clause_text": "The Employee agrees to maintain the confidentiality of all proprietary and confidential information of the Employer and shall not disclose such information to any third party or use it for any purpose other than the performance of employment duties, except as required by law.",
+          "metadata": {
+            "jurisdiction": "Global/Standard",
+            "version": "1.1",
+            "last_updated": "2025-01-01"
+          }
+        },
+        {
+          "clause_title": "Non-Solicitation",
+          "clause_text": "During the term of employment and for a period of twelve (12) months thereafter, the Employee shall not directly or indirectly solicit or induce any employee, client, or business partner of the Employer to terminate or reduce their relationship with the Employer.",
+          "metadata": {
+            "jurisdiction": "USA/Standard",
+            "version": "1.0",
+            "last_updated": "2025-01-01"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+//NDA
+
+{
+  "clauses": [
+    {
+      "contract_type": "Non-Disclosure Agreement",
+      "clauses": [
+        {
+          "clause_title": "Definition of Confidential Information",
+          "clause_text": "Confidential Information means any non-public, proprietary, or confidential information disclosed by either Party, whether orally, in writing, electronically, or otherwise, including but not limited to business plans, financial data, customer information, trade secrets, technical data, and intellectual property.",
+          "metadata": {
+            "jurisdiction": "Global/Standard",
+            "version": "1.0",
+            "last_updated": "2025-01-01"
+          }
+        },
+        {
+          "clause_title": "Obligation of Confidentiality",
+          "clause_text": "The Receiving Party shall keep all Confidential Information strictly confidential and shall not disclose such information to any third party without the prior written consent of the Disclosing Party, except to its employees or advisors who have a need to know and are bound by confidentiality obligations.",
+          "metadata": {
+            "jurisdiction": "Global/Standard",
+            "version": "1.0",
+            "last_updated": "2025-01-01"
+          }
+        },
+        {
+          "clause_title": "Term and Survival",
+          "clause_text": "The obligations under this Agreement shall commence on the Effective Date and continue for a period of five (5) years from the date of disclosure of the Confidential Information. Trade secrets shall be protected for so long as they remain trade secrets under applicable law.",
+          "metadata": {
+            "jurisdiction": "USA/EU",
+            "version": "1.0",
+            "last_updated": "2025-01-01"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+
+//Service agreement
+
+{
+  "clauses": [
+    {
+      "contract_type": "Service Agreement",
+      "clauses": [
+        {
+          "clause_title": "Scope of Services",
+          "clause_text": "The Service Provider shall provide the services described in Schedule A in a professional and workmanlike manner in accordance with industry standards and applicable laws.",
+          "metadata": {
+            "jurisdiction": "Global/Standard",
+            "version": "1.2",
+            "last_updated": "2025-01-01"
+          }
+        },
+        {
+          "clause_title": "Payment Terms",
+          "clause_text": "The Client shall pay the Service Provider the fees set forth in Schedule B. Invoices shall be payable within thirty (30) days of receipt. Late payments may accrue interest at the rate of 1.5% per month or the maximum rate permitted by law, whichever is lower.",
+          "metadata": {
+            "jurisdiction": "USA/India",
+            "version": "1.1",
+            "last_updated": "2025-01-01"
+          }
+        },
+        {
+          "clause_title": "Termination",
+          "clause_text": "Either Party may terminate this Agreement upon thirty (30) days’ prior written notice. Either Party may terminate immediately for material breach if such breach is not cured within fifteen (15) days of written notice.",
+          "metadata": {
+            "jurisdiction": "Global/Standard",
+            "version": "1.0",
+            "last_updated": "2025-01-01"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+//Consulting agreement
+
+{
+  "clauses": [
+    {
+      "contract_type": "Consulting Agreement",
+      "clauses": [
+        {
+          "clause_title": "Independent Contractor Relationship",
+          "clause_text": "The Consultant is engaged as an independent contractor and not as an employee, agent, or partner of the Company. The Consultant shall have no authority to bind the Company.",
+          "metadata": {
+            "jurisdiction": "USA/Standard",
+            "version": "1.0",
+            "last_updated": "2025-01-01"
+          }
+        },
+        {
+          "clause_title": "Deliverables",
+          "clause_text": "The Consultant shall deliver the work products and reports as specified in the Statement of Work. All Deliverables shall be subject to the Company’s reasonable review and acceptance.",
+          "metadata": {
+            "jurisdiction": "Global/Standard",
+            "version": "1.1",
+            "last_updated": "2025-01-01"
+          }
+        },
+        {
+          "clause_title": "Intellectual Property Rights",
+          "clause_text": "All Deliverables created by the Consultant under this Agreement shall be deemed works made for hire. To the extent not considered works made for hire, the Consultant hereby assigns all intellectual property rights to the Company.",
+          "metadata": {
+            "jurisdiction": "USA/EU",
+            "version": "1.2",
+            "last_updated": "2025-01-01"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+//Vendor-Supplier agreement
+
+{
+  "clauses": [
+    {
+      "contract_type": "Vendor Agreement",
+      "clauses": [
+        {
+          "clause_title": "Supply of Goods",
+          "clause_text": "The Vendor shall supply the goods in accordance with the specifications, quantities, and delivery schedule agreed upon in the applicable purchase orders.",
+          "metadata": {
+            "jurisdiction": "India/USA",
+            "version": "1.0",
+            "last_updated": "2025-01-01"
+          }
+        },
+        {
+          "clause_title": "Inspection and Acceptance",
+          "clause_text": "All goods supplied shall be subject to inspection and acceptance by the Purchaser. The Purchaser may reject any goods that do not conform to the agreed specifications.",
+          "metadata": {
+            "jurisdiction": "Global/Standard",
+            "version": "1.1",
+            "last_updated": "2025-01-01"
+          }
+        },
+        {
+          "clause_title": "Indemnification",
+          "clause_text": "The Vendor shall indemnify and hold harmless the Purchaser from any claims, damages, or losses arising out of the Vendor’s breach of this Agreement or violation of applicable laws.",
+          "metadata": {
+            "jurisdiction": "Global/Standard",
+            "version": "1.0",
+            "last_updated": "2025-01-01"
+          }
+        }
+      ]
+    }
+  ]
+}
