@@ -1,0 +1,147 @@
+
+
+[
+  {
+    "contract_type": "Master Services Agreement",
+    "clauses": [
+      {
+        "clause_title": "Scope of Services",
+        "clause_text": "The Consultant shall provide services to the Company in accordance with the applicable Statement of Work (SOW) and agreed service levels. In case of any conflict, the SOW shall prevail.",
+        "metadata": {
+          "source": "MSA Template",
+          "jurisdiction": "India",
+          "version": "Format No. 15"
+          
+        }
+      },
+      {
+        "clause_title": "Payment Terms",
+        "clause_text": "The Company shall pay the Consultant fees as specified in the SOW. Payments shall be made within the agreed number of days from the date of invoice, subject to applicable interest for delays.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "Format No. 15"
+        }
+      },
+      {
+        "clause_title": "Confidentiality",
+        "clause_text": "Both parties shall keep all Confidential Information strictly confidential during the term of this Agreement and thereafter, except where disclosure is required by law.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "Format No. 15"
+        }
+      },
+      {
+        "clause_title": "Intellectual Property Rights",
+        "clause_text": "All Intellectual Property developed under this Agreement, including Deliverables, shall vest with the Company or its clients unless otherwise stated in the SOW.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "Format No. 15"
+        }
+      },
+      {
+        "clause_title": "Termination",
+        "clause_text": "Either party may terminate this Agreement for material breach upon written notice and expiry of the agreed cure period, or upon occurrence of force majeure or insolvency.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "Format No. 15"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "OneStream SaaS Agreement",
+    "clauses": [
+      {
+        "clause_title": "Provision of SaaS Services",
+        "clause_text": "OneStream shall provide access to the SaaS services to the Customer during the applicable term solely for internal business purposes and in accordance with the Documentation.",
+        "metadata": {
+          "source": "OneStream SaaS Agreement",
+          "jurisdiction": "United States",
+          "version": "Rev March 2022",
+          "last_updated": "2022-03"
+        }
+      },
+      {
+        "clause_title": "Use Restrictions",
+        "clause_text": "Customer shall not misuse the Service, exceed licensed limits, reverse engineer, or allow unauthorized access to the Service.",
+        "metadata": {
+          "jurisdiction": "United States",
+          "version": "Rev March 2022"
+        }
+      },
+      {
+        "clause_title": "Data Security",
+        "clause_text": "OneStream shall implement and maintain reasonable administrative, technical, and physical safeguards to protect Customer Data as described in the Data Security attachment.",
+        "metadata": {
+          "jurisdiction": "United States (FedRAMP/NIST)",
+          "version": "Rev March 2022",
+          "primary_agent": "Information Security"
+        }
+      },
+      {
+        "clause_title": "Confidentiality",
+        "clause_text": "Each party shall protect the other party’s Confidential Information and shall not disclose such information except as permitted under this Agreement.",
+        "metadata": {
+          "jurisdiction": "United States",
+          "version": "Rev March 2022"
+        }
+      },
+      {
+        "clause_title": "Limitation of Liability",
+        "clause_text": "Except for excluded claims, each party’s aggregate liability shall be limited as specified in the Agreement, and neither party shall be liable for indirect or consequential damages.",
+        "metadata": {
+          "jurisdiction": "United States",
+          "version": "Rev March 2022"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Cisco Data Protection Agreement",
+    "clauses": [
+      {
+        "clause_title": "Roles of the Parties",
+        "clause_text": "The Customer acts as the Controller of Personal Data and Cisco acts as the Processor, or as a sub-processor where applicable, in accordance with Data Protection Laws.",
+        "metadata": {
+          "source": "Cisco Data Protection Agreement",
+          "jurisdiction": "Global (GDPR, CCPA)",
+          "version": "DPA v8",
+          "last_updated": "2025-09"
+        }
+      },
+      {
+        "clause_title": "Processing of Personal Data",
+        "clause_text": "Cisco shall process Personal Data only in accordance with Customer instructions, this DPA, and applicable Data Protection Laws.",
+        "metadata": {
+          "jurisdiction": "Global",
+          "version": "DPA v8"
+        }
+      },
+      {
+        "clause_title": "Security Measures",
+        "clause_text": "Cisco shall implement appropriate technical and organizational measures to protect Personal Data against unauthorized or unlawful processing and accidental loss.",
+        "metadata": {
+          "jurisdiction": "Global",
+          "version": "DPA v8",
+          "primary_agent": "Information Security"
+        }
+      },
+      {
+        "clause_title": "Data Breach Notification",
+        "clause_text": "Cisco shall notify the Customer without undue delay, and in any event within 48 hours, after becoming aware of a Personal Data breach.",
+        "metadata": {
+          "jurisdiction": "Global",
+          "version": "DPA v8"
+        }
+      },
+      {
+        "clause_title": "Subprocessing",
+        "clause_text": "Cisco may engage Subprocessors subject to contractual obligations that provide equivalent data protection safeguards and prior notice to the Customer.",
+        "metadata": {
+          "jurisdiction": "Global",
+          "version": "DPA v8"
+        }
+      }
+    ]
+  }
+]
