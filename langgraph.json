@@ -1,0 +1,12 @@
+{
+  "graphs": {
+    "contract_classifier": "graph.graph_builder:build_graph"
+  },
+  "dependencies": [
+    "langgraph",
+    "langchain",
+    "langchain-google-genai",
+    "python-dotenv",
+    "pymupdf"
+  ]
+}
