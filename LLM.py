@@ -19,7 +19,7 @@ print("Extracted Text : ")
 print(legal_text)
 
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key="AIzaSyBxfKR6LR0TaF_Kfhhejjp5B56PITRdDyI")
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key={API_KEY})
 
 prompt = ChatPromptTemplate.from_template(
     """
@@ -53,3 +53,4 @@ print("\n")
 print("Required Details : ")
 print("Agreement Type:", result.get("agreement_type"))
 print("Industry:", result.get("industry"))
+
