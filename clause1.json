@@ -1,0 +1,84 @@
+[
+  {
+    "contract_type": "Employment Agreement",
+    "clauses": [
+      {
+        "clause_title": "Appointment and Designation",
+        "clause_text": "The Company hereby appoints the Employee to the position specified in this Agreement, and the Employee agrees to perform the duties and responsibilities assigned by the Company from time to time.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "1.0",
+          "last_updated": "2024-05-10"
+        }
+      },
+      {
+        "clause_title": "Confidentiality",
+        "clause_text": "The Employee shall not disclose any confidential or proprietary information of the Company to any third party during or after the term of employment without prior written consent.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "1.1",
+          "last_updated": "2024-05-10"
+        }
+      },
+      {
+        "clause_title": "Intellectual Property",
+        "clause_text": "All inventions, designs, works, and developments created by the Employee during the course of employment shall be the exclusive property of the Company.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "1.0",
+          "last_updated": "2024-05-10"
+        }
+      },
+      {
+        "clause_title": "Termination of Employment",
+        "clause_text": "Either Party may terminate this Agreement by providing written notice as per the notice period defined in this Agreement.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "1.0",
+          "last_updated": "2024-05-10"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Partnership Agreement",
+    "clauses": [
+      {
+        "clause_title": "Formation of Partnership",
+        "clause_text": "The Partners hereby agree to form a partnership business in accordance with the terms and conditions set forth in this Agreement.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "1.0",
+          "last_updated": "2024-05-10"
+        }
+      },
+      {
+        "clause_title": "Capital Contribution",
+        "clause_text": "Each Partner shall contribute capital to the Partnership in the amount and manner mutually agreed upon by the Partners.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "1.0",
+          "last_updated": "2024-05-10"
+        }
+      },
+      {
+        "clause_title": "Profit and Loss Sharing",
+        "clause_text": "The profits and losses of the Partnership shall be shared equally among the Partners unless otherwise agreed in writing.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "1.1",
+          "last_updated": "2024-05-10"
+        }
+      },
+      {
+        "clause_title": "Dissolution of Partnership",
+        "clause_text": "The Partnership may be dissolved by mutual consent of the Partners or in accordance with applicable law.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "1.0",
+          "last_updated": "2024-05-10"
+        }
+      }
+    ]
+  }
+]
