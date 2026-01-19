@@ -1,15 +1,44 @@
-# Python cache
+# =========================
+# Python cache / bytecode
+# =========================
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Conda / venv
+# =========================
+# Virtual environments
+# =========================
 venv/
 env/
+.venv/
 .conda/
+docling/
 
-# Outputs
+# =========================
+# LangChain / runtime cache
+# =========================
+.cache/
+*.log
+
+# =========================
+# Generated outputs
+# =========================
 parser/outputs/
+classification/__pycache__/
 
-# OS files
+# =========================
+# OS / Editor junk
+# =========================
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
+
+# =========================
+# Secrets / env files
+# =========================
+.env
+.env.*
+# Contract documents
+*.pdf
