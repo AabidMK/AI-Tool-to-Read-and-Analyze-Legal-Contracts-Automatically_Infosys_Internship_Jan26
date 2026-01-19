@@ -7,7 +7,6 @@ from docling.datamodel.base_models import InputFormat
 
 class ContractDocumentParser:
     def __init__(self):
-        # Simple, version-stable configuration
         self.converter = DocumentConverter(
             allowed_formats=[
                 InputFormat.PDF,
