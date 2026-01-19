@@ -1,0 +1,15 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Conda / venv
+venv/
+env/
+.conda/
+
+# Outputs
+parser/outputs/
+
+# OS files
+.DS_Store
+Thumbs.db
