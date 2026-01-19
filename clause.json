@@ -1,0 +1,112 @@
+[
+  {
+    "contract_type": "General Clauses",
+    "clauses": [
+      {
+        "clause_title": "Severability",
+        "clause_text": "If any provision of this Agreement is declared invalid, illegal, or unenforceable by a competent authority, such provision shall be severed from this Agreement, and the remaining provisions shall remain valid and enforceable to the fullest extent permitted by law.",
+        "metadata": {
+          "source": "Law Insider – Severability Clause Examples",
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-07"
+        }
+      },
+      {
+        "clause_title": "Entire Agreement",
+        "clause_text": "This Agreement constitutes the complete and exclusive understanding between the Parties with respect to its subject matter and supersedes all prior or contemporaneous negotiations, representations, or agreements, whether written or oral.",
+        "metadata": {
+          "source": "SEC EDGAR – Filed Commercial Agreements",
+          "jurisdiction": "Global/Standard",
+          "version": "1.1",
+          "last_updated": "2025-01-07"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Employment Agreement",
+    "clauses": [
+      {
+        "clause_title": "Confidentiality Obligations",
+        "clause_text": "The Employee shall not, during or after the term of employment, disclose or misuse any confidential, proprietary, or sensitive information of the Company except as required in the ordinary course of employment or with prior written authorization.",
+        "metadata": {
+          "source": "eForms – Employment Confidentiality Clauses",
+          "jurisdiction": "India",
+          "version": "1.0",
+          "last_updated": "2025-01-07"
+        }
+      },
+      {
+        "clause_title": "Intellectual Property Ownership",
+        "clause_text": "All intellectual property, including inventions, works of authorship, and developments created by the Employee during the course of employment that relate to the business of the Company shall be the sole and exclusive property of the Company.",
+        "metadata": {
+          "source": "Law Insider – Employment IP Assignment Clauses",
+          "jurisdiction": "India",
+          "version": "1.0",
+          "last_updated": "2025-01-07"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Non-Disclosure Agreement",
+    "clauses": [
+      {
+        "clause_title": "Non-Disclosure of Confidential Information",
+        "clause_text": "The Receiving Party agrees to keep all Confidential Information strictly confidential and shall not disclose such information to any third party or use it for any purpose other than those expressly permitted under this Agreement.",
+        "metadata": {
+          "source": "OneNDA – Open NDA Standard",
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-07"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Service Level Agreement",
+    "clauses": [
+      {
+        "clause_title": "Service Availability",
+        "clause_text": "The Service Provider shall use commercially reasonable efforts to ensure that the services are available not less than ninety-nine percent (99%) of the time in each calendar month, excluding scheduled maintenance periods.",
+        "metadata": {
+          "source": "AWS Service Level Agreements",
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-07"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Memorandum of Understanding",
+    "clauses": [
+      {
+        "clause_title": "Roles and Responsibilities",
+        "clause_text": "Each Party shall perform its respective obligations as outlined in this Memorandum in good faith and shall cooperate to achieve the objectives set forth herein.",
+        "metadata": {
+          "source": "Contractbook – MoU Templates",
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-07"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Government Standard (FAR)",
+    "clauses": [
+      {
+        "clause_title": "Termination for Convenience",
+        "clause_text": "The Government reserves the right to terminate this Contract, in whole or in part, when such termination is determined to be in the Government’s interest, upon written notice to the Contractor.",
+        "metadata": {
+          "source": "Federal Acquisition Regulation (FAR)",
+          "jurisdiction": "US-Federal",
+          "version": "FAR-inspired",
+          "last_updated": "2025-01-07"
+        }
+      }
+    ]
+  }
+]
