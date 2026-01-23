@@ -1,5 +1,0 @@
-pdfplumber
-python-docx
-langchain
-langgraph
-openai
