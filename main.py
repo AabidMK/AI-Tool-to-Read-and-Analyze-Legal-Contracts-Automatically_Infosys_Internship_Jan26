@@ -7,7 +7,8 @@ if __name__ == "__main__":
     app = build_graph()
 
     result = app.invoke({
-        "file_path": "inputs/cisco-master-data-protection-agreement.pdf"
+        "file_path": "inputs/Master-Service-Agreement.pdf"
     })
 
     print(result["classification"])
+    

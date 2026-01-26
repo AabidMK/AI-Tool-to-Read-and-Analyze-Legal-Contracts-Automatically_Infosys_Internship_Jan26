@@ -1,0 +1,5 @@
+langchain
+langchain-community
+langchain-core
+langchain-qdrant sentence-transformers
+langchain-huggingface

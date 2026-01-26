@@ -1,11 +1,18 @@
+import json
 from llm.llm_client import get_llm
 from parser.parser_model import extract_text_from_pdf
 
+from qdrant_client import QdrantClient
+from langchain_qdrant import QdrantVectorStore
+from langchain_huggingface import HuggingFaceEmbeddings
+
 llm = get_llm()
+
 
 def extract_text_node(state):
     text = extract_text_from_pdf(state["file_path"])
     return {"contract_text": text}
+
 
 def classify_contract_node(state):
     prompt = f"""
@@ -18,7 +25,89 @@ Return output strictly in JSON:
 }}
 
 Contract:
-{state["contract_text"][:800]}
+{state["contract_text"][:3000]}
 """
     response = llm.invoke(prompt)
-    return {"classification": response.content}
+    raw = response.content.strip()
+
+    try:
+        parsed = json.loads(raw)
+    except json.JSONDecodeError:
+        # minimal cleanup for common LLM junk , coz before code was giving contract type and industry as null
+        cleaned = (
+            raw.replace("```json", "")
+               .replace("```", "")
+               .replace("json", "", 1)
+               .strip()
+        )
+        try:
+            parsed = json.loads(cleaned)
+        except json.JSONDecodeError:
+            parsed = {}
+
+    contract_type = parsed.get("contract_type")
+    industry = parsed.get("industry")
+
+    return {
+        "classification": response.content,  # keep string 
+        "contract_type": contract_type,       #  non-null
+        "industry": industry,                  #  non-null
+    }
+
+
+# qdrant retrieval setup
+
+client = QdrantClient(host="localhost", port=6333)
+
+embeddings = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
+)
+
+vectorstore = QdrantVectorStore(
+    client=client,
+    collection_name="contract_clauses",
+    embedding=embeddings,
+)
+
+
+def retrieve_clauses_node(state):
+    contract_type = state.get("contract_type")
+
+    # Only use contract_type as the semantic query
+    if not contract_type:
+        # If classification failed, return empty for now (as requested)
+        return {"retrieved_clauses": []}
+
+    query = f"{contract_type} contract clauses"
+
+    """ note here there is no code for embedding our query coz langchain makes an internal run for that 
+    previously we have done 
+    
+    vectorstore = QdrantVectorStore(
+    client=client,
+    collection_name="contract_clauses",
+    embedding=embeddings)
+    
+    langchain internally runs 
+    query_vector = embeddings.embed_query(query)
+    and vector is sent to qdrant
+    client.search(
+    collection_name="contract_clauses",
+    vector=query_vector,
+    limit=5)  """
+
+    results = vectorstore.similarity_search(
+        query=query,
+        k=5,
+    )
+
+    retrieved = [
+        {
+            "clause_title": doc.metadata.get("clause_title"),
+            "text": doc.page_content,
+            "metadata": doc.metadata,
+        }
+        for doc in results
+    ]
+
+    return {"retrieved_clauses": retrieved}
