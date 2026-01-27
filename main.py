@@ -8,5 +8,8 @@ if __name__ == "__main__":
         "file_path": "sample_contract.pdf"
     })
 
-    print("Classification Result:")
-    print(result["classification"])
+    print("Contract Type:", result["contract_type"])
+    print("Industry:", result["industry"])
+    print("Retrieved Clauses:")
+    for c in result["clauses"]:
+        print("-", c["clause_title"])
