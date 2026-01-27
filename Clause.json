@@ -1,79 +1,38 @@
-[
-  {
-    "contract_type": "Shareholders Agreement",
-    "clauses": [
-      {
-        "clause_title": "Share Capital and Ownership",
-        "clause_text": "The share capital of the Company shall be divided into such classes and number of shares as set forth in this Agreement. Each Shareholder shall hold shares in the Company in accordance with the shareholding structure agreed upon herein.",
-        "metadata": {
-          "jurisdiction": "Corporate/Global",
-          "version": "1.0",
-          "last_updated": "2024-05-10"
-        }
-      },
-      {
-        "clause_title": "Transfer of Shares",
-        "clause_text": "No Shareholder shall transfer, sell, assign, or otherwise dispose of any shares of the Company except in accordance with the terms and conditions of this Agreement, including applicable pre-emptive rights and restrictions.",
-        "metadata": {
-          "jurisdiction": "Corporate/Global",
-          "version": "1.1",
-          "last_updated": "2024-05-10"
-        }
-      },
-      {
-        "clause_title": "Board of Directors",
-        "clause_text": "The management of the Company shall be vested in the Board of Directors. Each Shareholder shall have the right to nominate directors to the Board in proportion to their shareholding, subject to applicable law.",
-        "metadata": {
-          "jurisdiction": "Corporate/Global",
-          "version": "1.0",
-          "last_updated": "2024-05-10"
-        }
-      },
-      {
-        "clause_title": "Reserved Matters",
-        "clause_text": "Certain matters of the Company, including but not limited to amendment of charter documents, issuance of new shares, and merger or sale of substantial assets, shall require the prior written consent of the Shareholders as specified herein.",
-        "metadata": {
-          "jurisdiction": "Corporate/Global",
-          "version": "1.0",
-          "last_updated": "2024-05-10"
-        }
-      },
-      {
-        "clause_title": "Tag-Along Rights",
-        "clause_text": "In the event a majority Shareholder proposes to transfer shares to a third party, the minority Shareholders shall have the right to participate in such transfer on the same terms and conditions.",
-        "metadata": {
-          "jurisdiction": "Corporate/Global",
-          "version": "1.0",
-          "last_updated": "2024-05-10"
-        }
-      },
-      {
-        "clause_title": "Drag-Along Rights",
-        "clause_text": "If Shareholders holding the requisite majority approve a sale of the Company, the remaining Shareholders shall be required to sell their shares on the same terms and conditions as approved.",
-        "metadata": {
-          "jurisdiction": "Corporate/Global",
-          "version": "1.0",
-          "last_updated": "2024-05-10"
-        }
-      },
-      {
-        "clause_title": "Dividend Policy",
-        "clause_text": "The declaration and payment of dividends shall be subject to applicable law and the financial position of the Company, as determined by the Board of Directors.",
-        "metadata": {
-          "jurisdiction": "Corporate/Global",
-          "version": "1.0",
-          "last_updated": "2024-05-10"
-        }
-      },
-      {
-        "clause_title": "Deadlock Resolution",
-        "clause_text": "In the event of a deadlock among Shareholders on any material matter, the Parties shall follow the dispute resolution mechanism set forth in this Agreement to resolve such deadlock in good faith.",
-        "metadata": {
-          "jurisdiction": "Corporate/Global",
-          "version": "1.0",
-          "last_updated": "2024-05-10"
-        }
-      }
-    ]
-  }
+  "contract_type": " Service Agreement",
+        "clauses": [{
+                "clause_title": "Scope of Services",
+                "clause_text": "The Service Provider agrees to perform the services described in Schedule A in a competent and professional manner consistent with industry standards.",
+                "metadata": {
+                    "jurisdiction": "India",
+                    "last_updated": "07-01-2026"
+                }
+            },
+            {
+                "clause_title": "Term and Termination",
+                "clause_text": "This Agreement shall commence on the Effective Date and continue until terminated by either party upon thirty (30) days’ prior written notice to the other party.",
+                "metadata": {
+                    "jurisdiction": "India",
+                    "last_updated": "07-01-2026"
+                }
+            }
+        ]
+    },
+    {
+        "contract_type": "Non-Disclosure Agreement",
+        "clauses": [
+            ...
+        ]
+    },
+    {
+        "contract_type": "Software License Agreement",
+        "clauses": [
+            ...
+        ]
+    },
+    {
+        "contract_type": "Lease Agreement",
+        "clauses": [
+            ...
+        ]
+    }
 ]
