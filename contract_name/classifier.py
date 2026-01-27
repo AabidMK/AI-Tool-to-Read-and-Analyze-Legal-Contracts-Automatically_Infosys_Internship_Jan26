@@ -61,7 +61,7 @@ JSON:
     response = requests.post(
         "http://localhost:11434/api/generate",
         json={
-            "model": "phi3:mini",   # must match `ollama list`
+            "model": "phi3:mini",  
             "prompt": prompt,
             "stream": False,
             "options": {
