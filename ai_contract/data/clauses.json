@@ -1,0 +1,146 @@
+[
+  {
+    "id": "NDA-001",
+    "contract_type": "NDA",
+    "clause_title": "Confidentiality Obligation",
+    "clause_text": "The Receiving Party agrees to hold and maintain the Confidential Information in strict confidence for the sole and exclusive benefit of the Disclosing Party. The Receiving Party shall carefully restrict access to Confidential Information to employees, contractors and third parties as is reasonably required and shall require those persons to sign nondisclosure restrictions at least as protective as those in this Agreement.",
+    "category": "confidentiality",
+    "risk_level": "high",
+    "metadata": {
+      "jurisdiction": "US",
+      "last_updated": "2024-01-15"
+    }
+  },
+  {
+    "id": "NDA-002",
+    "contract_type": "NDA",
+    "clause_title": "Term of Confidentiality",
+    "clause_text": "The obligations of confidentiality under this Agreement shall remain in effect for a period of five (5) years from the date of disclosure of the Confidential Information, unless otherwise agreed to in writing by both parties.",
+    "category": "term",
+    "risk_level": "medium",
+    "metadata": {
+      "jurisdiction": "US",
+      "last_updated": "2024-01-15"
+    }
+  },
+  {
+    "id": "NDA-003",
+    "contract_type": "NDA",
+    "clause_title": "Permitted Disclosures",
+    "clause_text": "The Receiving Party may disclose Confidential Information to the extent required by applicable law, regulation, or court order, provided that the Receiving Party provides the Disclosing Party with prompt written notice of such requirement prior to disclosure and cooperates with the Disclosing Party in seeking a protective order.",
+    "category": "exceptions",
+    "risk_level": "medium",
+    "metadata": {
+      "jurisdiction": "US",
+      "last_updated": "2024-01-15"
+    }
+  },
+  {
+    "id": "SLA-001",
+    "contract_type": "SLA",
+    "clause_title": "Service Availability Guarantee",
+    "clause_text": "Provider guarantees 99.9% uptime for the Service on a monthly basis. Uptime is calculated as the percentage of time the Service is available and accessible to Customer during each calendar month, excluding Scheduled Maintenance and Force Majeure events.",
+    "category": "performance",
+    "risk_level": "high",
+    "metadata": {
+      "jurisdiction": "US",
+      "last_updated": "2024-01-10"
+    }
+  },
+  {
+    "id": "SLA-002",
+    "contract_type": "SLA",
+    "clause_title": "Response Time Commitments",
+    "clause_text": "Provider commits to respond to Critical Priority incidents within 1 hour, High Priority incidents within 4 hours, and Normal Priority incidents within 24 hours from the time of Customer notification. Response times are measured during Business Hours only.",
+    "category": "support",
+    "risk_level": "medium",
+    "metadata": {
+      "jurisdiction": "US",
+      "last_updated": "2024-01-10"
+    }
+  },
+  {
+    "id": "SLA-003",
+    "contract_type": "SLA",
+    "clause_title": "Service Credits",
+    "clause_text": "In the event Provider fails to meet the Service Availability Guarantee, Customer shall be entitled to Service Credits calculated as follows: 95-99.8% uptime: 10% monthly fee credit; 90-94.9% uptime: 25% monthly fee credit; below 90% uptime: 50% monthly fee credit. Service Credits are Customer's sole remedy for service unavailability.",
+    "category": "remedies",
+    "risk_level": "high",
+    "metadata": {
+      "jurisdiction": "US",
+      "last_updated": "2024-01-10"
+    }
+  },
+  {
+    "id": "EMP-001",
+    "contract_type": "Employment",
+    "clause_title": "Compensation and Benefits",
+    "clause_text": "Employee shall receive an annual base salary of the amount specified in the offer letter, payable in accordance with Company's standard payroll practices. Employee will be eligible to participate in the Company's benefit plans, including health insurance, retirement plans, and paid time off, subject to the terms and conditions of such plans.",
+    "category": "compensation",
+    "risk_level": "low",
+    "metadata": {
+      "jurisdiction": "US",
+      "last_updated": "2024-01-20"
+    }
+  },
+  {
+    "id": "EMP-002",
+    "contract_type": "Employment",
+    "clause_title": "Intellectual Property Assignment",
+    "clause_text": "Employee agrees that all inventions, discoveries, works of authorship, and other intellectual property created, conceived, or developed by Employee during employment and related to the Company's business shall be the sole and exclusive property of the Company. Employee hereby assigns all rights, title, and interest in such intellectual property to the Company.",
+    "category": "intellectual_property",
+    "risk_level": "high",
+    "metadata": {
+      "jurisdiction": "US",
+      "last_updated": "2024-01-20"
+    }
+  },
+  {
+    "id": "EMP-003",
+    "contract_type": "Employment",
+    "clause_title": "Non-Compete Clause",
+    "clause_text": "During employment and for a period of twelve (12) months following termination, Employee agrees not to directly or indirectly engage in any business that competes with the Company within a 50-mile radius of any Company location. This restriction applies to employment, consulting, or ownership interests exceeding 5%.",
+    "category": "restrictive_covenants",
+    "risk_level": "high",
+    "metadata": {
+      "jurisdiction": "US",
+      "last_updated": "2024-01-20"
+    }
+  },
+  {
+    "id": "SLA-004",
+    "contract_type": "SLA",
+    "clause_title": "Data Security Standards",
+    "clause_text": "Provider shall implement and maintain industry-standard security measures including encryption of data in transit and at rest using AES-256 encryption, regular security audits, intrusion detection systems, and multi-factor authentication for all administrative access.",
+    "category": "security",
+    "risk_level": "high",
+    "metadata": {
+      "jurisdiction": "US",
+      "last_updated": "2024-01-10"
+    }
+  },
+  {
+    "id": "NDA-004",
+    "contract_type": "NDA",
+    "clause_title": "Return of Materials",
+    "clause_text": "Upon termination of this Agreement or upon request by the Disclosing Party, the Receiving Party shall promptly return or destroy all Confidential Information and any copies thereof, and certify in writing that all such materials have been returned or destroyed.",
+    "category": "termination",
+    "risk_level": "medium",
+    "metadata": {
+      "jurisdiction": "US",
+      "last_updated": "2024-01-15"
+    }
+  },
+  {
+    "id": "EMP-004",
+    "contract_type": "Employment",
+    "clause_title": "At-Will Employment",
+    "clause_text": "Employee's employment is at-will, meaning that either Employee or Company may terminate the employment relationship at any time, with or without cause, and with or without notice. This at-will relationship cannot be modified except by a written agreement signed by an authorized Company representative.",
+    "category": "termination",
+    "risk_level": "low",
+    "metadata": {
+      "jurisdiction": "US",
+      "last_updated": "2024-01-20"
+    }
+  }
+]
