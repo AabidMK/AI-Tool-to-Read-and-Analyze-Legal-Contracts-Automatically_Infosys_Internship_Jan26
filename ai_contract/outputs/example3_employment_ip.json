@@ -1,0 +1,51 @@
+{
+  "query": "intellectual property rights and ownership of inventions",
+  "contract_type": "Employment",
+  "top_k": 3,
+  "category": "",
+  "risk_level": "",
+  "retrieved_clauses": [
+    {
+      "id": "EMP-002",
+      "clause_text": "Intellectual Property Assignment: Employee agrees that all inventions, discoveries, works of authorship, and other intellectual property created, conceived, or developed by Employee during employment and related to the Company's business shall be the sole and exclusive property of the Company. Employee hereby assigns all rights, title, and interest in such intellectual property to the Company.",
+      "metadata": {
+        "clause_title": "Intellectual Property Assignment",
+        "category": "intellectual_property",
+        "meta_last_updated": "2024-01-20",
+        "meta_jurisdiction": "US",
+        "contract_type": "Employment",
+        "risk_level": "high"
+      },
+      "similarity_score": 0.263,
+      "distance": 0.737
+    },
+    {
+      "id": "EMP-003",
+      "clause_text": "Non-Compete Clause: During employment and for a period of twelve (12) months following termination, Employee agrees not to directly or indirectly engage in any business that competes with the Company within a 50-mile radius of any Company location. This restriction applies to employment, consulting, or ownership interests exceeding 5%.",
+      "metadata": {
+        "contract_type": "Employment",
+        "meta_last_updated": "2024-01-20",
+        "clause_title": "Non-Compete Clause",
+        "category": "restrictive_covenants",
+        "risk_level": "high",
+        "meta_jurisdiction": "US"
+      },
+      "similarity_score": -0.7114,
+      "distance": 1.7114
+    },
+    {
+      "id": "EMP-004",
+      "clause_text": "At-Will Employment: Employee's employment is at-will, meaning that either Employee or Company may terminate the employment relationship at any time, with or without cause, and with or without notice. This at-will relationship cannot be modified except by a written agreement signed by an authorized Company representative.",
+      "metadata": {
+        "meta_jurisdiction": "US",
+        "contract_type": "Employment",
+        "clause_title": "At-Will Employment",
+        "risk_level": "low",
+        "meta_last_updated": "2024-01-20",
+        "category": "termination"
+      },
+      "similarity_score": -0.7445,
+      "distance": 1.7445
+    }
+  ]
+}

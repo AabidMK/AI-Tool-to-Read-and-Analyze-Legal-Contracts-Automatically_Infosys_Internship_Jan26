@@ -1,0 +1,51 @@
+{
+  "query": "uptime guarantees and service availability commitments",
+  "contract_type": "SLA",
+  "top_k": 3,
+  "category": "",
+  "risk_level": "",
+  "retrieved_clauses": [
+    {
+      "id": "SLA-001",
+      "clause_text": "Service Availability Guarantee: Provider guarantees 99.9% uptime for the Service on a monthly basis. Uptime is calculated as the percentage of time the Service is available and accessible to Customer during each calendar month, excluding Scheduled Maintenance and Force Majeure events.",
+      "metadata": {
+        "contract_type": "SLA",
+        "risk_level": "high",
+        "meta_jurisdiction": "US",
+        "clause_title": "Service Availability Guarantee",
+        "category": "performance",
+        "meta_last_updated": "2024-01-10"
+      },
+      "similarity_score": 0.6393,
+      "distance": 0.3607
+    },
+    {
+      "id": "SLA-003",
+      "clause_text": "Service Credits: In the event Provider fails to meet the Service Availability Guarantee, Customer shall be entitled to Service Credits calculated as follows: 95-99.8% uptime: 10% monthly fee credit; 90-94.9% uptime: 25% monthly fee credit; below 90% uptime: 50% monthly fee credit. Service Credits are Customer's sole remedy for service unavailability.",
+      "metadata": {
+        "clause_title": "Service Credits",
+        "category": "remedies",
+        "risk_level": "high",
+        "contract_type": "SLA",
+        "meta_jurisdiction": "US",
+        "meta_last_updated": "2024-01-10"
+      },
+      "similarity_score": 0.0717,
+      "distance": 0.9283
+    },
+    {
+      "id": "SLA-002",
+      "clause_text": "Response Time Commitments: Provider commits to respond to Critical Priority incidents within 1 hour, High Priority incidents within 4 hours, and Normal Priority incidents within 24 hours from the time of Customer notification. Response times are measured during Business Hours only.",
+      "metadata": {
+        "contract_type": "SLA",
+        "meta_jurisdiction": "US",
+        "clause_title": "Response Time Commitments",
+        "risk_level": "medium",
+        "meta_last_updated": "2024-01-10",
+        "category": "support"
+      },
+      "similarity_score": -0.0279,
+      "distance": 1.0279
+    }
+  ]
+}
