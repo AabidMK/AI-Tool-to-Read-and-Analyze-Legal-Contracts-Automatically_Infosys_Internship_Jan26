@@ -1,0 +1,51 @@
+{
+  "query": "confidential information protection and disclosure restrictions",
+  "contract_type": "NDA",
+  "top_k": 3,
+  "category": "",
+  "risk_level": "",
+  "retrieved_clauses": [
+    {
+      "id": "NDA-003",
+      "clause_text": "Permitted Disclosures: The Receiving Party may disclose Confidential Information to the extent required by applicable law, regulation, or court order, provided that the Receiving Party provides the Disclosing Party with prompt written notice of such requirement prior to disclosure and cooperates with the Disclosing Party in seeking a protective order.",
+      "metadata": {
+        "meta_last_updated": "2024-01-15",
+        "meta_jurisdiction": "US",
+        "category": "exceptions",
+        "risk_level": "medium",
+        "clause_title": "Permitted Disclosures",
+        "contract_type": "NDA"
+      },
+      "similarity_score": 0.4741,
+      "distance": 0.5259
+    },
+    {
+      "id": "NDA-001",
+      "clause_text": "Confidentiality Obligation: The Receiving Party agrees to hold and maintain the Confidential Information in strict confidence for the sole and exclusive benefit of the Disclosing Party. The Receiving Party shall carefully restrict access to Confidential Information to employees, contractors and third parties as is reasonably required and shall require those persons to sign nondisclosure restrictions at least as protective as those in this Agreement.",
+      "metadata": {
+        "meta_last_updated": "2024-01-15",
+        "contract_type": "NDA",
+        "meta_jurisdiction": "US",
+        "risk_level": "high",
+        "clause_title": "Confidentiality Obligation",
+        "category": "confidentiality"
+      },
+      "similarity_score": 0.447,
+      "distance": 0.553
+    },
+    {
+      "id": "NDA-002",
+      "clause_text": "Term of Confidentiality: The obligations of confidentiality under this Agreement shall remain in effect for a period of five (5) years from the date of disclosure of the Confidential Information, unless otherwise agreed to in writing by both parties.",
+      "metadata": {
+        "risk_level": "medium",
+        "contract_type": "NDA",
+        "meta_last_updated": "2024-01-15",
+        "category": "term",
+        "meta_jurisdiction": "US",
+        "clause_title": "Term of Confidentiality"
+      },
+      "similarity_score": 0.2825,
+      "distance": 0.7175
+    }
+  ]
+}
