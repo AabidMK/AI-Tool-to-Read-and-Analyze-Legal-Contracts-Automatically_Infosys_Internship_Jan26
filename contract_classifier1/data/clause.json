@@ -1,0 +1,14 @@
+[
+  {
+    "clause_id": 1,
+    "title": "Confidentiality",
+    "text": "The parties agree to maintain confidentiality of all shared information.",
+    "contract_type": "NDA"
+  },
+  {
+    "clause_id": 2,
+    "title": "Payment Terms",
+    "text": "Payment must be made within 30 days after invoice.",
+    "contract_type": "Service Agreement"
+  }
+]
