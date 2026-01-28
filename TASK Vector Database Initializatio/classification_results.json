@@ -1,0 +1,56 @@
+[
+  {
+    "file": "Legal-Notice-for-Recovery-of-Friendly-Loan-LawRato.docx",
+    "contract_type": "Service Contract",
+    "industry": "Manufacturing",
+    "clauses": [
+      {
+        "clause_title": "Client's Business Description",
+        "clause_text": "That my client is engaged in the business of __________ of the ___ etc.",
+        "contract_type": "Service Contract",
+        "industry": "Manufacturing"
+      },
+      {
+        "clause_title": "Acknowledgment of Bills and Payment Acknowledgement",
+        "clause_text": "That inspite of acknowledging the liability of payment of principal balance of Rs. _________/- you have been miserably failed to make payment of the said amount due to my client from you deliberately with malafide intent, hence you are liable to pay the said principal balance amount of Rs. __________/- alongwith interest @ __% p.a. from the date of due till actual realization of the said sum as is generally and customarily prevailing in the trade usages, which comes to Rs. __________/-.",
+        "contract_type": "Service Contract",
+        "industry": "Manufacturing"
+      },
+      {
+        "clause_title": "Payment Obligation",
+        "clause_text": "That you are liable to pay the total amount of Rs. ________/- to my above named client and my above named client is entitled to recover the same from you.",
+        "contract_type": "Service Contract",
+        "industry": "Manufacturing"
+      },
+      {
+        "clause_title": "Notice for Payment",
+        "clause_text": "I, therefore, through this Notice finally call upon you to pay to my client Rs. __________/-. along with future interest @ __ % p.a. from the date of notice till actual realization of the said amount, together with notice fee of Rs. ____/- to my client either in cash or by demand draft or Cheque which ever mode suits you better, within clear 30 days from the date of receipt of this notice, failing which my client has given me clear instructions to file civil as well as criminal lawsuit for recovery and other Miscellaneous proceedings against you in the competent court of law and in that event you shall be fully responsible for the same.",
+        "contract_type": "Service Contract",
+        "industry": "Manufacturing"
+      }
+    ],
+    "status": "success",
+    "error": null
+  },
+  {
+    "file": "SaaS and Services Agreement_.docx",
+    "contract_type": "Services Agreement",
+    "industry": "Technology",
+    "clauses": [
+      {
+        "clause_title": "Services",
+        "clause_text": "1. Services\nPurpose: The Company agrees to provide [Software Name] (hereinafter referred to as \u201cPlatform\u201d) by [Company Name] as a SaaS (Software as a Service) for [Application of the software] and also provide for the maintenance and support.\nServices: The Company shall provide the best possible services:\nCustomer and Authorized Users access to the Platform.\nCustomer Professional Services.\nSubscription Audits: Each subscription service and other related professional services shall provide the specification of the services, the platforms used, user limitations, the subscription term, and terms and conditions.",
+        "contract_type": "Services Agreement",
+        "industry": "Technology"
+      },
+      {
+        "clause_title": "Platform Access and Authorized User",
+        "clause_text": "2. Platform Access and Authorized User\nAdministrative Users: During the configuration and set-up process for the Platform, the Customer will identify an administrative user name and password for the Customer\u2019s account with the Company. The Company shall reserve the right to refuse registration of or cancel user names and passwords or delete accounts as it deems inappropriate.\nAuthorized Users: Customers may allow these number of [Mention the No.] employees and/or independent contractors as is indicated on an Order Form to use the applicable Platform on behalf of Customer as \u201cCustomer Users.\u201d Additionally, if applicable to a Platform, the Customer may allow [Number] of designees (\u201cVendor Users\u201d and together with Customer Users, \u201cAuthorized Users\u201d). Authorized User subscriptions are for designated Authorized Users and cannot be shared or used by more than one Authorized User, but may be reassigned to new Authorized Users.\nAuthorized User Conditions to Use:\nAs a condition to access and use of a Platform\nEach Authorized User shall agree to abide by the terms of the Company\u2019s end-user terms of use which it may adopt from time to time.\nCustomer Users shall agree to abide by the terms of this Agreement, or a subset thereof.\nVendor Users shall agree to abide by the terms of the Company's Vendor Terms of Service applicable.",
+        "contract_type": "Services Agreement",
+        "industry": "Technology"
+      }
+    ],
+    "status": "success",
+    "error": null
+  }
+]
