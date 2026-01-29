@@ -111,3 +111,64 @@ def retrieve_clauses_node(state):
     ]
 
     return {"retrieved_clauses": retrieved}
+
+def analyze_contract_node(state):
+    contract_text = state["contract_text"]
+    retrieved_clauses = state["retrieved_clauses"]
+
+    clause_texts = "\n\n".join(
+        [f"{c['clause_title']}:\n{c['text']}" for c in retrieved_clauses]
+    )
+
+    prompt = f"""
+You are a legal contract reviewer.
+
+Contract Type: {state.get("contract_type")}
+
+TASK:
+1. Compare the contract text with the standard reference clauses.
+2. Identify which clauses are missing or incomplete.
+3. Suggest improvements or better wording.
+4. List missing standard clauses.
+
+Return output strictly in JSON:
+
+{{
+  "clause_comparison": [
+    {{"clause_title": "...", "status": "Present/Missing/Weak"}}
+  ],
+  "missing_clauses": ["..."],
+  "suggestions": ["..."]
+}}
+
+CONTRACT TEXT:
+{contract_text[:8000]}
+
+REFERENCE CLAUSES:
+{clause_texts}
+"""
+
+    response = llm.invoke(prompt)
+    raw = response.content.strip()
+
+    try:
+        parsed = json.loads(raw)
+
+    except json.JSONDecodeError:
+        cleaned = (
+            raw.replace("```json", "")
+               .replace("```", "")
+               .strip()
+        )
+
+        try:
+            parsed = json.loads(cleaned)
+        except json.JSONDecodeError:
+            parsed = {
+                "error": "LLM did not return valid JSON",
+                "raw_output": raw
+            }
+
+    return {
+        "analysis_report": parsed
+    }

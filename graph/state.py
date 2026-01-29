@@ -10,3 +10,11 @@ class ContractState(TypedDict):
 
     #new state 
     retrieved_clauses: Optional[List[Dict[str,Any]]]
+    
+    analysis_report: Optional[Dict[str, Any]]
+
+    missing_clauses: Optional[List[str]]
+
+    suggestions: Optional[List[str]]
+
+    clause_comparison: Optional[List[Dict[str, Any]]]
