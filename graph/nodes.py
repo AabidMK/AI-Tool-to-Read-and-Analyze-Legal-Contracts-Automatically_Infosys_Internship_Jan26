@@ -142,7 +142,7 @@ Return output strictly in JSON:
 }}
 
 CONTRACT TEXT:
-{contract_text[:8000]}
+{contract_text[:3000]}
 
 REFERENCE CLAUSES:
 {clause_texts}
