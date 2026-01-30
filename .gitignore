@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtual env
+.venv/
+env/
+
+# LangGraph / LangChain
+.langgraph_api/
+
+# Vector DB persistence
+chroma_db/
+
+# OS
+.DS_Store
+Thumbs.db

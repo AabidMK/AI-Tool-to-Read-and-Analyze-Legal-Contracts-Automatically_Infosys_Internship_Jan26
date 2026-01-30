@@ -1,0 +1,6 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "ClauseAI_Full_Pipeline": "./pipeline/langgraphstudio_pipeline.py:graph"
+  }
+}

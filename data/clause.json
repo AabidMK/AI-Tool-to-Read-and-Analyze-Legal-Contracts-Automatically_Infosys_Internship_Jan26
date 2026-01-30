@@ -1,0 +1,1126 @@
+[
+  {
+    "contract_type": "Non-Disclosure Agreement (NDA)",
+    "clauses": [
+      {
+        "clause_title": "Definition of Confidential Information",
+        "clause_text": "Confidential Information means all non-public business, technical, financial, legal, or proprietary information disclosed by the Disclosing Party, whether orally, in writing, electronically, or by inspection, that is designated as confidential or should reasonably be understood to be confidential.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Purpose of Disclosure",
+        "clause_text": "The Confidential Information is disclosed solely for the purpose of evaluating, discussing, or pursuing a potential business or contractual relationship between the parties.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Non-Disclosure Obligations",
+        "clause_text": "The Receiving Party shall maintain the confidentiality of the Confidential Information and shall not disclose it to any third party without the prior written consent of the Disclosing Party, except as permitted under this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Permitted Disclosures",
+        "clause_text": "The Receiving Party may disclose Confidential Information to its employees, agents, or advisors who have a need to know such information for the permitted purpose and who are bound by confidentiality obligations no less restrictive than those set forth herein.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Exclusions from Confidential Information",
+        "clause_text": "Confidential Information shall not include information that becomes publicly available without breach of this Agreement, is lawfully obtained from a third party without restriction, or is independently developed without reference to the Confidential Information.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Standard of Care",
+        "clause_text": "The Receiving Party shall protect the Confidential Information using the same degree of care it uses to protect its own confidential information of a similar nature, but in no event less than reasonable care.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Use Restriction",
+        "clause_text": "The Receiving Party shall not use the Confidential Information for any purpose other than the purpose expressly permitted under this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "No License Granted",
+        "clause_text": "Nothing in this Agreement shall be construed as granting any license or rights to the Confidential Information, whether by implication, estoppel, or otherwise.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Ownership of Confidential Information",
+        "clause_text": "All Confidential Information shall remain the exclusive property of the Disclosing Party, and no ownership rights are transferred under this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Return or Destruction of Confidential Information",
+        "clause_text": "Upon written request or termination of this Agreement, the Receiving Party shall promptly return or destroy all Confidential Information and certify such destruction upon request.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Duration of Confidentiality",
+        "clause_text": "The confidentiality obligations under this Agreement shall continue for a period of five (5) years following the termination or expiration of this Agreement, unless otherwise required by law.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Survival of Obligations",
+        "clause_text": "All obligations relating to confidentiality, non-disclosure, and restricted use shall survive the termination or expiration of this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Legal Disclosure Requirement",
+        "clause_text": "If the Receiving Party is required by law to disclose Confidential Information, it shall provide prompt written notice to the Disclosing Party prior to such disclosure, where legally permissible.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "No Warranty",
+        "clause_text": "All Confidential Information is provided on an \"as is\" basis, and the Disclosing Party makes no representations or warranties regarding the accuracy or completeness of the Confidential Information.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "No Obligation to Proceed",
+        "clause_text": "Nothing in this Agreement obligates either party to proceed with any transaction or business relationship between the parties.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Injunctive Relief",
+        "clause_text": "The Receiving Party acknowledges that unauthorized disclosure may cause irreparable harm for which monetary damages may be inadequate, and the Disclosing Party shall be entitled to seek injunctive or equitable relief.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Limitation of Liability",
+        "clause_text": "Neither party shall be liable for any indirect, incidental, or consequential damages arising out of or related to this Agreement, except in cases of willful misconduct or breach of confidentiality.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Assignment",
+        "clause_text": "The Receiving Party shall not assign or transfer this Agreement without the prior written consent of the Disclosing Party.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Governing Law",
+        "clause_text": "This Agreement shall be governed by and construed in accordance with the laws of the applicable jurisdiction, without regard to conflict of law principles.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Severability",
+        "clause_text": "If any provision of this Agreement is held invalid or unenforceable, the remaining provisions shall remain in full force and effect.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Entire Agreement",
+        "clause_text": "This Agreement constitutes the entire understanding between the parties with respect to the subject matter hereof and supersedes all prior discussions or agreements.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Amendment",
+        "clause_text": "This Agreement may be amended only by a written document signed by authorized representatives of both parties.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Waiver",
+        "clause_text": "Failure by either party to enforce any provision of this Agreement shall not constitute a waiver of future enforcement of that or any other provision.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Counterparts",
+        "clause_text": "This Agreement may be executed in counterparts, each of which shall be deemed an original, but all of which together shall constitute one agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      }
+    ]
+  },
+
+  {
+    "contract_type": "Service Level Agreement (SLA)",
+    "clauses": [
+      {
+        "clause_title": "Service Scope and Definitions",
+        "clause_text": "This Service Level Agreement defines the scope of services, key terms, responsibilities, and performance metrics applicable to the services provided by the Service Provider to the Customer.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Description of Services",
+        "clause_text": "The Service Provider shall provide the services as described in this Agreement in accordance with the specifications, timelines, and requirements agreed upon by the parties.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Service Availability",
+        "clause_text": "The Service Provider shall ensure that the services are available to the Customer in accordance with the availability targets specified in this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Uptime Commitment",
+        "clause_text": "The Service Provider commits to maintaining a minimum service uptime percentage per calendar month, excluding scheduled maintenance and force majeure events.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Scheduled Maintenance",
+        "clause_text": "The Service Provider may perform scheduled maintenance as required, provided that reasonable prior notice is given to the Customer and such maintenance is performed during designated maintenance windows.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Incident Management",
+        "clause_text": "The Service Provider shall establish and maintain procedures for identifying, tracking, resolving, and reporting service incidents in a timely manner.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Response Time",
+        "clause_text": "The Service Provider shall respond to service incidents within the response times specified based on the severity level of the incident.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Resolution Time",
+        "clause_text": "The Service Provider shall use commercially reasonable efforts to resolve service incidents within the resolution timeframes defined in this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Performance Standards",
+        "clause_text": "The Service Provider shall perform the services in accordance with the performance standards and service level objectives set forth in this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Service Monitoring",
+        "clause_text": "The Service Provider shall continuously monitor service performance to ensure compliance with the service levels defined under this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Reporting Obligations",
+        "clause_text": "The Service Provider shall provide periodic performance reports detailing service availability, incidents, and compliance with agreed service levels.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Service Credits",
+        "clause_text": "If the Service Provider fails to meet the service level commitments, the Customer shall be entitled to service credits as the sole and exclusive remedy, unless otherwise specified.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Customer Responsibilities",
+        "clause_text": "The Customer shall provide timely cooperation, access, and information reasonably required by the Service Provider for the delivery of the services.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Change Management",
+        "clause_text": "Any changes to the scope of services or service levels shall be managed through a mutually agreed change management process.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Escalation Procedure",
+        "clause_text": "The parties shall establish an escalation procedure for unresolved service issues to ensure timely resolution at appropriate management levels.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Exclusions",
+        "clause_text": "Service level commitments shall not apply to service failures caused by factors outside the reasonable control of the Service Provider, including force majeure events.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Third-Party Dependencies",
+        "clause_text": "The Service Provider shall not be responsible for service failures attributable to third-party services or infrastructure not under its direct control.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Security Obligations",
+        "clause_text": "The Service Provider shall implement reasonable administrative, technical, and physical safeguards to protect the services and related data.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Confidentiality",
+        "clause_text": "Each party shall maintain the confidentiality of any non-public information received in connection with this Agreement in accordance with applicable confidentiality obligations.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Audit Rights",
+        "clause_text": "The Customer may audit the Service Provider’s compliance with the service levels upon reasonable prior notice and during normal business hours.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Term and Termination",
+        "clause_text": "This Agreement shall remain in effect for the term specified herein and may be terminated in accordance with the termination provisions set forth in this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Termination for Breach",
+        "clause_text": "Either party may terminate this Agreement upon written notice if the other party materially breaches this Agreement and fails to cure such breach within the specified period.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Limitation of Liability",
+        "clause_text": "Neither party shall be liable for any indirect, incidental, or consequential damages arising out of or related to this Agreement, except as expressly provided herein.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Governing Law",
+        "clause_text": "This Agreement shall be governed by and construed in accordance with the laws of the applicable jurisdiction, without regard to its conflict of law principles.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Master Service Agreement (MSA)",
+    "clauses": [
+      {
+        "clause_title": "Purpose of Agreement",
+        "clause_text": "This Agreement establishes the general terms and conditions under which the Service Provider may provide services to the Client from time to time pursuant to one or more Statements of Work.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Definitions and Interpretation",
+        "clause_text": "Capitalized terms used but not otherwise defined in this Agreement shall have the meanings assigned to them herein or in the applicable Statement of Work.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Scope of Services",
+        "clause_text": "The Service Provider shall perform the services described in each applicable Statement of Work in accordance with the terms of this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Statements of Work",
+        "clause_text": "Each Statement of Work executed under this Agreement shall incorporate the terms of this Agreement and shall form an integral part hereof.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Order of Precedence",
+        "clause_text": "In the event of any conflict between this Agreement and a Statement of Work, the terms of the Statement of Work shall prevail unless expressly stated otherwise.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Fees and Payment Terms",
+        "clause_text": "The Client shall pay the Service Provider the fees specified in the applicable Statement of Work in accordance with the payment terms set forth therein.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Invoicing",
+        "clause_text": "The Service Provider shall invoice the Client for fees and reimbursable expenses in accordance with the invoicing schedule specified in the applicable Statement of Work.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Expenses",
+        "clause_text": "The Client shall reimburse the Service Provider for reasonable and pre-approved expenses incurred in connection with the performance of the services.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Change Management",
+        "clause_text": "Any changes to the scope, timeline, or pricing of the services shall be documented through a mutually agreed change order or amended Statement of Work.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Client Responsibilities",
+        "clause_text": "The Client shall provide timely access, information, and cooperation reasonably required by the Service Provider to perform the services.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Independent Contractor",
+        "clause_text": "The Service Provider shall perform the services as an independent contractor and nothing in this Agreement shall be deemed to create a partnership or agency relationship.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Confidentiality",
+        "clause_text": "Each party shall maintain the confidentiality of the other party’s confidential information in accordance with the confidentiality obligations set forth in this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Intellectual Property Ownership",
+        "clause_text": "Except as expressly provided otherwise, all intellectual property rights in deliverables created under this Agreement shall vest as specified in the applicable Statement of Work.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "License Grant",
+        "clause_text": "To the extent applicable, the Service Provider grants the Client a limited, non-exclusive, non-transferable license to use the deliverables for internal business purposes.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Representations and Warranties",
+        "clause_text": "Each party represents and warrants that it has the authority to enter into and perform its obligations under this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Compliance with Laws",
+        "clause_text": "Each party shall comply with all applicable laws, regulations, and industry standards in connection with the performance of this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Indemnification",
+        "clause_text": "Each party shall indemnify and hold harmless the other party from claims arising out of its breach of this Agreement or negligence.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Limitation of Liability",
+        "clause_text": "Neither party shall be liable for any indirect, incidental, or consequential damages arising out of or related to this Agreement, except as expressly provided herein.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Term",
+        "clause_text": "This Agreement shall commence on the Effective Date and shall continue until terminated in accordance with the terms of this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Termination for Convenience",
+        "clause_text": "Either party may terminate this Agreement for convenience upon providing prior written notice as specified herein.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Termination for Cause",
+        "clause_text": "Either party may terminate this Agreement upon written notice if the other party materially breaches this Agreement and fails to cure such breach within the specified period.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Force Majeure",
+        "clause_text": "Neither party shall be liable for failure to perform due to events beyond its reasonable control, including acts of God, war, or governmental action.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Assignment",
+        "clause_text": "Neither party may assign this Agreement without the prior written consent of the other party, except in connection with a merger or sale of substantially all assets.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Governing Law",
+        "clause_text": "This Agreement shall be governed by and construed in accordance with the laws of the applicable jurisdiction, without regard to conflict of law principles.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Entire Agreement",
+        "clause_text": "This Agreement constitutes the entire agreement between the parties with respect to its subject matter and supersedes all prior agreements or understandings.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Employment Agreement",
+    "clauses": [
+      {
+        "clause_title": "Appointment and Position",
+        "clause_text": "The Employer hereby appoints the Employee to the position specified in this Agreement, and the Employee accepts such appointment subject to the terms and conditions set forth herein.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Duties and Responsibilities",
+        "clause_text": "The Employee shall devote full working time, attention, and best efforts to the performance of duties and responsibilities assigned by the Employer during the term of employment.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Reporting Structure",
+        "clause_text": "The Employee shall report to such person or authority as designated by the Employer from time to time.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Term of Employment",
+        "clause_text": "The employment relationship shall commence on the Effective Date and shall continue until terminated in accordance with the provisions of this Agreement.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Probation Period",
+        "clause_text": "The Employee may be required to serve a probation period during which performance and suitability for continued employment shall be assessed by the Employer.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Working Hours",
+        "clause_text": "The Employee shall work such hours as may be required to properly perform the duties of employment, subject to applicable labor laws.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Compensation",
+        "clause_text": "The Employee shall be paid compensation as agreed by the Employer, subject to applicable deductions, taxes, and statutory contributions.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Bonus and Incentives",
+        "clause_text": "Any bonuses or incentive payments shall be discretionary unless expressly stated otherwise and subject to the Employer’s policies.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Employee Benefits",
+        "clause_text": "The Employee shall be entitled to participate in benefit plans provided by the Employer in accordance with applicable policies and laws.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Leave and Holidays",
+        "clause_text": "The Employee shall be entitled to leave and holidays in accordance with the Employer’s leave policy and applicable labor laws.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Expense Reimbursement",
+        "clause_text": "The Employer shall reimburse the Employee for reasonable and authorized business expenses incurred in the performance of duties, subject to company policy.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Confidentiality Obligations",
+        "clause_text": "The Employee shall not disclose or misuse any confidential or proprietary information of the Employer during or after the term of employment.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Intellectual Property",
+        "clause_text": "All intellectual property created by the Employee in the course of employment shall vest exclusively in the Employer.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Non-Compete",
+        "clause_text": "During the term of employment and for a reasonable period thereafter, the Employee shall not engage in activities that directly compete with the Employer’s business, subject to applicable law.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Non-Solicitation",
+        "clause_text": "The Employee shall not solicit or induce employees, customers, or business partners of the Employer during employment and for a specified period thereafter.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Code of Conduct",
+        "clause_text": "The Employee agrees to comply with all company policies, codes of conduct, and workplace rules as amended from time to time.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Disciplinary Action",
+        "clause_text": "The Employer may take disciplinary action against the Employee for misconduct or violation of company policies in accordance with applicable law.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Termination by Employer",
+        "clause_text": "The Employer may terminate the Employee’s employment with or without cause upon providing notice as required under applicable law.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Termination by Employee",
+        "clause_text": "The Employee may resign from employment by providing prior written notice in accordance with this Agreement and applicable law.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Termination for Cause",
+        "clause_text": "The Employer may terminate employment for cause including misconduct, breach of duty, or violation of law or company policy.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Final Settlement",
+        "clause_text": "Upon termination, all dues payable to the Employee shall be settled in accordance with applicable law and company policy.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Return of Company Property",
+        "clause_text": "Upon termination of employment, the Employee shall immediately return all company property, documents, and materials in their possession.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Governing Law",
+        "clause_text": "This Agreement shall be governed by and construed in accordance with the laws applicable in the jurisdiction of employment.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Severability",
+        "clause_text": "If any provision of this Agreement is held to be invalid or unenforceable, the remaining provisions shall remain in full force and effect.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Software / SaaS License Agreement",
+    "clauses": [
+      {
+        "clause_title": "Grant of License",
+        "clause_text": "Subject to the terms and conditions of this Agreement, the Licensor grants the Licensee a limited, non-exclusive, non-transferable, and revocable license to access and use the Software during the Subscription Term for internal business purposes.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Scope of License",
+        "clause_text": "The license granted under this Agreement is limited to the authorized users, features, and usage limits specified in the applicable order form or subscription plan.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Subscription Term",
+        "clause_text": "This Agreement shall commence on the Effective Date and remain in effect for the duration of the subscription term unless earlier terminated in accordance with this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "User Accounts",
+        "clause_text": "The Licensee is responsible for maintaining the confidentiality of user credentials and for all activities conducted through its user accounts.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Acceptable Use",
+        "clause_text": "The Licensee shall use the Software only in compliance with applicable laws and shall not use the Software for unlawful, harmful, or unauthorized activities.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Usage Restrictions",
+        "clause_text": "The Licensee shall not copy, modify, reverse engineer, decompile, or otherwise attempt to derive the source code of the Software except as permitted by law.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Ownership of Software",
+        "clause_text": "All rights, title, and interest in and to the Software, including all intellectual property rights, shall remain exclusively with the Licensor.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Fees and Payment",
+        "clause_text": "The Licensee shall pay the subscription fees specified in the applicable order form in accordance with the payment terms set forth therein.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Taxes",
+        "clause_text": "All fees are exclusive of applicable taxes, duties, or levies, which shall be the responsibility of the Licensee unless otherwise stated.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Service Availability",
+        "clause_text": "The Licensor shall use commercially reasonable efforts to make the Software available in accordance with the service availability commitments described herein.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Scheduled Maintenance",
+        "clause_text": "The Licensor may perform scheduled maintenance as necessary and shall provide reasonable advance notice where practicable.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Support Services",
+        "clause_text": "The Licensor shall provide technical support services in accordance with the support policies applicable to the Licensee’s subscription plan.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Data Ownership",
+        "clause_text": "The Licensee retains all rights, title, and interest in and to the data submitted or processed through the Software.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Data Security",
+        "clause_text": "The Licensor shall implement reasonable administrative, technical, and organizational measures to protect the security and integrity of the Licensee’s data.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Data Privacy",
+        "clause_text": "Each party shall comply with applicable data protection and privacy laws in connection with the processing of personal data under this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Confidentiality",
+        "clause_text": "Each party shall maintain the confidentiality of the other party’s confidential information disclosed under this Agreement in accordance with applicable confidentiality obligations.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Third-Party Services",
+        "clause_text": "The Software may interoperate with third-party services, and the Licensor shall not be responsible for such third-party services or their availability.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Warranties",
+        "clause_text": "The Licensor warrants that it has the authority to grant the license under this Agreement and that the Software will materially conform to its documentation.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Disclaimer of Warranties",
+        "clause_text": "Except as expressly stated, the Software is provided on an \"as is\" and \"as available\" basis without warranties of any kind.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Indemnification",
+        "clause_text": "The Licensor shall indemnify the Licensee against claims alleging that the Software infringes third-party intellectual property rights, subject to the terms herein.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Limitation of Liability",
+        "clause_text": "Neither party shall be liable for any indirect, incidental, or consequential damages arising out of or related to this Agreement, except as required by law.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Termination for Convenience",
+        "clause_text": "Either party may terminate this Agreement for convenience upon providing prior written notice in accordance with the subscription terms.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Termination for Breach",
+        "clause_text": "Either party may terminate this Agreement upon written notice if the other party materially breaches this Agreement and fails to cure such breach within the specified period.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Effect of Termination",
+        "clause_text": "Upon termination or expiration of this Agreement, the Licensee’s right to access and use the Software shall immediately cease.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      },
+      {
+        "clause_title": "Governing Law",
+        "clause_text": "This Agreement shall be governed by and construed in accordance with the laws of the applicable jurisdiction, without regard to conflict of law principles.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2025-01-01"
+        }
+      }
+    ]
+  }
+]
