@@ -26,6 +26,6 @@ def build_graph():
     graph.add_edge("classification", "retrieval")
 
     graph.set_entry_point("classify")
-    graph.add_edge("classify", END)
+    graph.add_edge("retrieval", END)
 
     return graph.compile()
