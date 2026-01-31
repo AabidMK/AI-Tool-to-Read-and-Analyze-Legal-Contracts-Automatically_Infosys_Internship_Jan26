@@ -55,3 +55,43 @@ def classify_contract(markdown_text: str) -> dict:
             "LLM did not return valid JSON. "
             "Try reducing input size or strengthening the prompt."
         ) from e
+
+
+from vectorstore.chroma_store import load_chroma
+
+# Load vector DB once (important)
+vectorstore = load_chroma()
+
+def retrieval_node(state: dict) -> dict:
+    """
+    LangGraph Retrieval Node
+
+    Expected state:
+    {
+        "query": str,
+        "contract_type": str
+    }
+    """
+
+    query = state["query"]
+    contract_type = state["contract_type"]
+
+    results = vectorstore.similarity_search_with_score(
+        query=query,
+        k=5,
+        filter={"contract_type": contract_type}
+    )
+
+    retrieved_clauses = []
+
+    for doc, score in results:
+        retrieved_clauses.append({
+            "clause_title": doc.metadata.get("clause_title"),
+            "clause_text": doc.page_content,
+            "contract_type": doc.metadata.get("contract_type"),
+            "score": round(score, 4)
+        })
+
+    return {
+        "retrieved_clauses": retrieved_clauses
+    }
