@@ -6,8 +6,10 @@ from langchain_huggingface import HuggingFaceEmbeddings
 
 
 # ---------------- CONFIG ----------------
-CHROMA_PERSIST_DIR = "chroma_db"
-CLAUSE_JSON_PATH = Path("data/clause.json")
+BASE_DIR = Path(__file__).resolve().parent.parent
+CHROMA_PERSIST_DIR = BASE_DIR / "chroma_db"
+CLAUSE_JSON_PATH = BASE_DIR / "data" / "clause.json"
+
 
 INSTRUCTION = "Represent the legal contract clause for semantic retrieval."
 
@@ -25,13 +27,10 @@ def initialize_chroma():
     documents = []
 
     for contract in data:
-        contract_type = contract["contract_type"]
+        contract_type = contract["contract_type"].strip()
 
         for clause in contract["clauses"]:
-            content = f"""
-Clause Title: {clause['clause_title']}
-Clause Text: {clause['clause_text']}
-"""
+            content = content = clause["clause_text"].strip()
 
             metadata = {
                 "contract_type": contract_type,
@@ -52,7 +51,6 @@ Clause Text: {clause['clause_text']}
         persist_directory=CHROMA_PERSIST_DIR
     )
 
-    vectorstore.persist()
     return vectorstore
 
 

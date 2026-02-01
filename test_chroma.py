@@ -1,11 +1,8 @@
-from classification.node import retrieval_node
+from vectorstore.chroma_store import load_chroma
 
-state = {
-    "query": "employee must not disclose company information",
-    "contract_type": "Employment Agreement"
-}
+vs = load_chroma()
 
-output = retrieval_node(state)
+all_meta = vs._collection.get(include=["metadatas"])["metadatas"]
 
-for c in output["retrieved_clauses"]:
-    print(c["clause_title"], c["score"])
+unique_contract_types = sorted(set(m["contract_type"] for m in all_meta))
+print(unique_contract_types)
