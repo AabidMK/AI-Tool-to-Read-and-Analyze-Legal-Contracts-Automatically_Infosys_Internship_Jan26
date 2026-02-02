@@ -1,0 +1,84 @@
+{
+  "file_path": ".Memorandum-of-Understanding-MOU-LawRato3.docx",
+  "contract_text": "",
+  "contract_type": "Consulting Services Agreement",
+  "industry": "Technology",
+  "clauses": [
+    {
+      "clause_title": "Governing Law and Dispute Resolution",
+      "clause_text": "You agree that these Application Terms and your use of the Software are governed under California law and any dispute related to the Software must be brought in a tribunal of competent jurisdiction located in or near San Francisco, California.",
+      "contract_type": "Open Source Software License Agreement",
+      "score": 0.6797463598502774
+    },
+    {
+      "clause_title": "Disclaimer of Warranties and Limitation of Liability",
+      "clause_text": "THE SERVICE IS PROVIDED ON AN 'AS IS' BASIS, AND NO WARRANTY, EITHER EXPRESS OR IMPLIED, IS GIVEN. YOUR USE OF THE SERVICE IS AT YOUR SOLE RISK. GitHub does not warrant that (i) the Service will meet your specific requirements; (ii) the Service is fully compatible with any particular platform; (iii) your use of the Service will be uninterrupted, timely, secure, or error-free. YOU EXPRESSLY UNDERSTAND AND AGREE THAT GITHUB SHALL NOT BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES, INCLUDING BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, DATA OR OTHER INTANGIBLE LOSSES.",
+      "contract_type": "Open Source Software License Agreement",
+      "score": 0.6749738514706409
+    },
+    {
+      "clause_title": "Injunctive Relief and Legal Remedies",
+      "clause_text": "The Company shall be entitled to injunctive relief for any or threatened breach of this Agreement, in addition to all other available remedies, including the recovery of monetary damages. This Agreement shall be binding upon me and my personal representatives and successors-in-interest, and shall inure to the benefit of Company, its successors and assigns.",
+      "contract_type": "Employee Non-Disclosure Agreement",
+      "score": 0.6593145933437592
+    },
+    {
+      "clause_title": "Duties and Responsibilities",
+      "clause_text": "Employee shall devote substantially all of Employee's working time and efforts to the business and affairs of the Company. Employee shall not engage in outside business activities (including serving on outside boards or committees) without the consent of the Board, provided that Employee shall be permitted to (i) manage Employee's personal, financial and legal affairs, (ii) participate in trade associations, and (iii) serve on the board of directors of not-for-profit or tax-exempt charitable organizations, in each case, subject to compliance with this Agreement and provided that such activities do not materially interfere with Employee's performance.",
+      "contract_type": "Employment Agreement",
+      "score": 0.6523879806727848
+    },
+    {
+      "clause_title": "Open Source Licenses and Notices",
+      "clause_text": "The open source license for the Software is included in the \"Open Source Notices\" documentation that is included with the Software. That documentation also includes copies of all applicable open source licenses. To the extent the terms of the licenses applicable to open source components require GitHub to make an offer to provide source code in connection with the Software, such offer is hereby made, and you may exercise it by contacting GitHub: https://github.com/contact",
+      "contract_type": "Open Source Software License Agreement",
+      "score": 0.6409387411792625
+    },
+    {
+      "clause_title": "Employment and Position",
+      "clause_text": "The Company hereby employs Employee, and Employee hereby accepts employment with the Company, upon the terms and conditions set forth in this Agreement for the period beginning on the Effective Date and ending as provided in the Agreement (the 'Employment Period'). During the Employment Period, Employee shall serve as [Position Title] with responsibilities, duties, and authority customary for such position, subject to direction by the Company's Board of Directors.",
+      "contract_type": "Employment Agreement",
+      "score": 0.6380032798966838
+    },
+    {
+      "clause_title": "Obligations of Receiving Party",
+      "clause_text": "Company agrees to keep confidential the Confidential Information and shall disclose the Confidential Information to only those personnel and agents of Company who have a professional need to know such information and shall use the Confidential Information solely for the purpose of performing its engagement for the Nation. Company will show this Agreement to all of its personnel and agents having access to the Confidential Information and will be responsible for any breach of this Agreement by its personnel and agents.",
+      "contract_type": "Non-Disclosure Agreement (NDA)",
+      "score": 0.6304008211487363
+    },
+    {
+      "clause_title": "Return of Company Property Upon Termination",
+      "clause_text": "Upon the termination of my employment from Company: (a) I shall return to Company all documents and property of Company, even if not marked 'confidential' or 'proprietary,' including but not necessarily limited to: drawings, blueprints, reports, manuals, correspondence, customer and/or investor lists, computer programs, and all other materials and all copies thereof relating in any way to Company's business, or in any way obtained by me during the course of employment. I further agree that I shall not retain copies, notes or abstracts of the foregoing.",
+      "contract_type": "Employee Non-Disclosure Agreement",
+      "score": 0.621856832785797
+    },
+    {
+      "clause_title": "License Grant for Open Source Software",
+      "clause_text": "These GitHub Open Source Applications Terms and Conditions (\"Application Terms\") are a legal agreement between you (either as an individual or on behalf of an entity) and GitHub, Inc. regarding your use of GitHub's applications, such as GitHub Desktop™ and associated documentation (\"Software\"). These Application Terms apply to the executable code version of the Software. Source code for the Software is available separately and free of charge under open source software license agreements.",
+      "contract_type": "Open Source Software License Agreement",
+      "score": 0.618231721349325
+    },
+    {
+      "clause_title": "Legal Compulsion to Disclose",
+      "clause_text": "If Company is requested or becomes legally compelled (by oral questions, interrogatories, requests for information or documents, subpoena, civil investigative demands, court order, or similar process) to disclose any of the Confidential Information or take any other action prohibited by this Agreement, Company shall provide the Nation with prompt written notice thereof (in reasonable detail) so that the Nation may elect to seek a protective order or other appropriate remedy and/or waive compliance with the provisions of this Agreement.",
+      "contract_type": "Non-Disclosure Agreement (NDA)",
+      "score": 0.6167298058335878
+    }
+  ],
+  "analysis": {
+    "contextual_analysis": "The provided excerpt includes references to standard clauses such as 'Governing Law and Dispute Resolution,' 'Disclaimer of Warranties and Limitation of Liability,' 'Injunctive Relief and Legal Remedies,' 'Duties and Responsibilities,' and 'Open Source Licenses and Notices.' However, these are not directly integrated into the main contract text but rather referenced. The specific clauses from other agreements (e.g., Open Source Software License Agreement) are used as references for certain terms like dispute resolution and warranties. There is no direct integration of these clauses within the context of a consulting services agreement.",
+    "suggestions": [
+      "Clarify the scope of 'substantially all' in the 'Duties and Responsibilities' clause to avoid ambiguity.",
+      "Include specific examples or definitions for terms like 'outside business activities,' such as what constitutes an outside board or committee role.",
+      "Add a confidentiality clause, especially given the reference to open source licenses and notices."
+    ],
+    "missing_clauses": [
+      "Governing Law and Dispute Resolution",
+      "Disclaimer of Warranties and Limitation of Liability",
+      "Injunctive Relief and Legal Remedies",
+      "Duties and Responsibilities",
+      "Open Source Licenses and Notices"
+    ],
+    "risk_level": "High"
+  }
+}
