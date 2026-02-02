@@ -10,6 +10,10 @@ if __name__ == "__main__":
 
     print("Contract Type:", result["contract_type"])
     print("Industry:", result["industry"])
-    print("Retrieved Clauses:")
+
+    print("\nRetrieved Clauses:")
     for c in result["clauses"]:
         print("-", c["clause_title"])
+
+    print("\nFINAL CONTRACT ANALYSIS:\n")
+    print(result["final_analysis"])

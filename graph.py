@@ -9,6 +9,7 @@ from langchain_core.documents import Document
 from qdrant_client import QdrantClient
 from qdrant_client.models import Distance, VectorParams, Filter, FieldCondition, MatchValue
 from langchain_ollama import OllamaEmbeddings
+from langchain_core.messages import SystemMessage, HumanMessage
 
 
 client = QdrantClient(url="http://localhost:6333")
@@ -57,6 +58,8 @@ class ContractState(TypedDict):
     contract_type: Optional[str]
     industry: Optional[str]
     clauses: List[dict]
+    final_analysis: Optional[str]
+
 
 def parse_node(state: ContractState):
     text = parse_document(state["file_path"])
@@ -131,17 +134,64 @@ def retrieve_clauses_node(state: ContractState):
         ]
     }
 
+def analyze_contract_node(state: ContractState):
+    llm = ChatOllama(
+        model="llama3.1:8b",
+        temperature=0
+    )
+
+    contract_text = state["contract_text"]
+    clauses = state["clauses"]
+
+    # Prepare expected clauses text
+    expected_clauses_text = "\n\n".join(
+        [
+            f"Clause Title: {c['clause_title']}\nClause Text:\n{c['clause_text']}"
+            for c in clauses
+        ]
+    )
+
+    system_prompt = f"""
+You are a Legal Contract Analyst.
+
+Your task:
+1. Compare the contract text with the EXPECTED CLAUSES.
+2. For each clause:
+   - Say if it is PRESENT or MISSING.
+   - If present, say whether it is adequate or weak.
+   - Suggest improvements if needed.
+3. Identify important clauses that are completely missing.
+4. Provide a short overall assessment and recommendations.
+
+EXPECTED CLAUSES:
+{expected_clauses_text}
+"""
+
+    messages = [
+        SystemMessage(content=system_prompt),
+        HumanMessage(content=f"Contract to analyze:\n\n{contract_text}")
+    ]
+
+    response = llm.invoke(messages)
+
+    return {
+        "final_analysis": response.content
+    }
+
+
 def build_graph():
     workflow = StateGraph(ContractState)
 
     workflow.add_node("parse", parse_node)
     workflow.add_node("classify", classify_node)
     workflow.add_node("retrieve_clauses", retrieve_clauses_node)
-
+    workflow.add_node("analyze_contract", analyze_contract_node)
+    
     workflow.set_entry_point("parse")
     workflow.add_edge("parse", "classify")
     workflow.add_edge("classify", "retrieve_clauses")
-    workflow.add_edge("retrieve_clauses", END)
+    workflow.add_edge("retrieve_clauses", "analyze_contract")
+    workflow.add_edge("analyze_contract", END)
 
     return workflow.compile()
 
