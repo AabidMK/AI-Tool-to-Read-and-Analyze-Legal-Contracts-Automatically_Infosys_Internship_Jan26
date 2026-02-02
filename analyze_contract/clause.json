@@ -1,0 +1,140 @@
+[
+  {
+    "contract_type": "Shareholder Agreement",
+    "clauses": [
+      {
+        "clause_title": "Share Transfer Restrictions",
+        "clause_text": "No Shareholder shall transfer, sell, or otherwise dispose of any shares without the prior written consent of the other Shareholders, except as permitted under this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "SHA-v1",
+          "last_updated": "2024-06-15"
+        }
+      },
+      {
+        "clause_title": "Voting Rights",
+        "clause_text": "Each Shareholder shall be entitled to voting rights in proportion to their shareholding in the Company.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "SHA-v1",
+          "last_updated": "2024-06-15"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Franchise Agreement",
+    "clauses": [
+      {
+        "clause_title": "Grant of Franchise",
+        "clause_text": "The Franchisor grants the Franchisee the right to operate a franchise using the Franchisor’s trademarks, systems, and business model.",
+        "metadata": {
+          "jurisdiction": "USA/India",
+          "version": "FA-v1",
+          "last_updated": "2024-06-15"
+        }
+      },
+      {
+        "clause_title": "Royalty Fees",
+        "clause_text": "The Franchisee shall pay ongoing royalty fees calculated as a percentage of gross revenue.",
+        "metadata": {
+          "jurisdiction": "USA/India",
+          "version": "FA-v1",
+          "last_updated": "2024-06-15"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Consultancy Agreement",
+    "clauses": [
+      {
+        "clause_title": "Independent Contractor Status",
+        "clause_text": "The Consultant is engaged as an independent contractor and not as an employee, agent, or partner of the Company.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "CA-v1",
+          "last_updated": "2024-06-15"
+        }
+      },
+      {
+        "clause_title": "Deliverables",
+        "clause_text": "The Consultant shall provide deliverables as outlined in Schedule A within the agreed timelines.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "CA-v1",
+          "last_updated": "2024-06-15"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Loan Agreement",
+    "clauses": [
+      {
+        "clause_title": "Repayment Terms",
+        "clause_text": "The Borrower shall repay the Loan along with interest in accordance with the repayment schedule set forth in this Agreement.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "LA-v1",
+          "last_updated": "2024-06-15"
+        }
+      },
+      {
+        "clause_title": "Default",
+        "clause_text": "Failure to make payments when due shall constitute an event of default under this Agreement.",
+        "metadata": {
+          "jurisdiction": "India/Standard",
+          "version": "LA-v1",
+          "last_updated": "2024-06-15"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Joint Venture Agreement",
+    "clauses": [
+      {
+        "clause_title": "Purpose of Joint Venture",
+        "clause_text": "The Parties agree to collaborate for the purpose of carrying out the business objectives defined under this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "JV-v1",
+          "last_updated": "2024-06-15"
+        }
+      },
+      {
+        "clause_title": "Management and Control",
+        "clause_text": "The management of the Joint Venture shall be carried out by a joint management committee comprising representatives from each Party.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "JV-v1",
+          "last_updated": "2024-06-15"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Purchase Agreement",
+    "clauses": [
+      {
+        "clause_title": "Purchase Price",
+        "clause_text": "The Buyer agrees to purchase the goods at the price specified in this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "PA-v1",
+          "last_updated": "2024-06-15"
+        }
+      },
+      {
+        "clause_title": "Inspection and Acceptance",
+        "clause_text": "The Buyer shall have the right to inspect the goods prior to acceptance.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "PA-v1",
+          "last_updated": "2024-06-15"
+        }
+      }
+    ]
+  }
+]
