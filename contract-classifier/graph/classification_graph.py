@@ -1,72 +1,129 @@
-from typing import TypedDict, List
+from typing import TypedDict
+from dotenv import load_dotenv
 from langgraph.graph import StateGraph
-from langchain_ollama import OllamaLLM
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import JsonOutputParser
-from pydantic import BaseModel, Field
+from groq import Groq
 import json
+import os
 
-# ----- Pydantic Models for Structured Output -----
-class ContractData(BaseModel):
-    """Key data point from the contract"""
-    name: str = Field(description="Name of the data field")
-    value: str = Field(description="Value or content of the field")
+load_dotenv()
 
-class ContractClassification(BaseModel):
-    """Contract classification with type, industry, and key data"""
-    contract_type: str = Field(description="Type of contract (e.g., NDA, Service Agreement)")
-    industry: str = Field(description="Industry sector (e.g., IT, Healthcare, Finance)")
-    data: List[ContractData] = Field(description="Key data points extracted from contract")
+# LangSmith tracing setup
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGCHAIN_PROJECT"] = "contract-analyzer"
 
-# ----- Graph State -----
 class GraphState(TypedDict):
     contract_text: str
     classification: dict
+    retrieved_clauses: list
+    analysis: dict
 
-# ----- LLM with JSON mode -----
-llm = OllamaLLM(model="tinyllama", temperature=0, format="json")
+groq_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-# ----- Output Parser -----
-parser = JsonOutputParser(pydantic_object=ContractClassification)
-
-# ----- Prompt -----
-prompt = ChatPromptTemplate.from_messages([
-    ("system", "You are a legal document analyzer. Extract contract type, industry, and key data points. Return ONLY valid JSON."),
-    ("user", """Analyze this contract and extract:
-1. Contract Type (e.g., NDA, Service Agreement, Employment Agreement)
-2. Industry (e.g., IT, Healthcare, Finance)
-3. Key data points like party names, obligations, exclusions, terms, etc.
-
-Contract Text:
-{contract_text}
-
-{format_instructions}""")
-])
-
-prompt = prompt.partial(format_instructions=parser.get_format_instructions())
-
-# ----- Node -----
 def classification_node(state: GraphState) -> GraphState:
-    # Use full contract text, but limit to reasonable size for LLM
-    contract_text = state["contract_text"]
-    # Increase limit to 8000 characters to capture more content
-    if len(contract_text) > 8000:
-        contract_text = contract_text[:8000] + "\n\n[Document truncated for length...]"
+    contract_text = state["contract_text"][:8000]
     
-    # Create chain with parser
-    chain = prompt | llm | parser
-    response = chain.invoke({"contract_text": contract_text})
-    
-    # Convert Pydantic model to dict
-    return {
-        "classification": response.dict() if hasattr(response, 'dict') else response
-    }
+    prompt_text = f"""Analyze this contract and return only JSON:
 
-# ----- Graph -----
+Contract: {contract_text}
+
+Return JSON like: {{"contract_type": "Non-Disclosure Agreement (NDA)", "industry": "Technology", "data": [{{"name": "parties", "value": "Company A, Company B"}}]}}"""
+    
+    response = groq_client.chat.completions.create(
+        model="llama-3.1-8b-instant",
+        messages=[{"role": "user", "content": prompt_text}],
+        temperature=0,
+        response_format={"type": "json_object"}
+    )
+    
+    response_content = response.choices[0].message.content
+    start = response_content.find('{')
+    end = response_content.rfind('}') + 1
+    json_str = response_content[start:end]
+    parsed = json.loads(json_str)
+    return {"classification": parsed}
+
+def analyze_contract_node(state: GraphState) -> GraphState:
+    contract_text = state["contract_text"][:8000]
+    retrieved_clauses = state.get("retrieved_clauses", [])
+    
+    # Extract ALL clauses from the contract text
+    extract_prompt = f"""Extract ALL clauses from this contract document. Include every clause, section, and provision found in the text:
+
+Contract: {contract_text}
+
+Return JSON with ALL extracted clauses:
+{{
+  "extracted_clauses": [
+    {{
+      "clause_title": "Confidentiality",
+      "clause_text": "Full clause text from contract...",
+      "metadata": {{
+        "jurisdiction": "Contract Specific",
+        "version": "1.0",
+        "last_updated": "2024-12-30"
+      }}
+    }}
+  ]
+}}"""
+    
+    extract_response = groq_client.chat.completions.create(
+        model="llama-3.1-8b-instant",
+        messages=[{"role": "user", "content": extract_prompt}],
+        temperature=0,
+        response_format={"type": "json_object"}
+    )
+    
+    extract_content = extract_response.choices[0].message.content
+    start = extract_content.find('{')
+    end = extract_content.rfind('}') + 1
+    extract_json = extract_content[start:end]
+    extracted_data = json.loads(extract_json)
+    extracted_clauses = extracted_data.get("extracted_clauses", [])
+    
+    # All clauses from document are present=true
+    analyzed_clauses = []
+    for clause in extracted_clauses:
+        analyzed_clause = {
+            "clause_title": clause.get("clause_title"),
+            "clause_text": clause.get("clause_text"),
+            "metadata": clause.get("metadata", {
+                "jurisdiction": "Contract Specific",
+                "version": "1.0",
+                "last_updated": "2024-12-30"
+            }),
+            "present": True
+        }
+        analyzed_clauses.append(analyzed_clause)
+    
+    # Add any retrieved clauses that are NOT in the document as present=false
+    for retrieved in retrieved_clauses:
+        found_match = False
+        for analyzed in analyzed_clauses:
+            if retrieved["clause_title"].lower() in analyzed["clause_title"].lower() or \
+               analyzed["clause_title"].lower() in retrieved["clause_title"].lower():
+                found_match = True
+                break
+        
+        if not found_match:
+            missing_clause = {
+                "clause_title": retrieved.get("clause_title"),
+                "clause_text": retrieved.get("clause_text"),
+                "metadata": {
+                    "jurisdiction": retrieved.get("jurisdiction"),
+                    "version": retrieved.get("version"),
+                    "last_updated": retrieved.get("last_updated")
+                },
+                "present": False
+            }
+            analyzed_clauses.append(missing_clause)
+    
+    return {"analysis": {"analyzed_clauses": analyzed_clauses}}
+
 def build_graph():
     graph = StateGraph(GraphState)
     graph.add_node("classify_contract", classification_node)
+    graph.add_node("analyze_contract", analyze_contract_node)
     graph.set_entry_point("classify_contract")
-    graph.set_finish_point("classify_contract")
+    graph.add_edge("classify_contract", "analyze_contract")
+    graph.set_finish_point("analyze_contract")
     return graph.compile()
-

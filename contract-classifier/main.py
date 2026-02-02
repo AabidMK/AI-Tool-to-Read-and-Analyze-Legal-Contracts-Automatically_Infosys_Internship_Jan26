@@ -1,97 +1,112 @@
 import json
-from parser.document_parser import parse_document
 from graph.classification_graph import build_graph
+from parser.document_parser import parse_document
+from retrieval import retrieve_similar_clauses
+
+def extract_json(text: str) -> dict:
+    if "```json" in text:
+        start = text.find("```json") + len("```json")
+        end = text.find("```", start)
+        text = text[start:end]
+    elif "```" in text:
+        start = text.find("```") + len("```")
+        end = text.find("```", start)
+        text = text[start:end]
+    
+    return json.loads(text.strip())
 
 def main():
-    # Provide your contract PDF or DOCX file path here
-    file_path = "/Users/lakshanagopu/Desktop/AI/AI-Tool-to-Read-and-Analyze-Legal-Contracts-Automatically_Infosys_Internship_Jan26/contract-classifier/NondisclosureAgreement.pdf"
-    
-    print("=" * 60)
-    print("Contract Classification System")
-    print("=" * 60)
-    print(f"\nProcessing document: {file_path}")
-    
-    # Extract content from the document
+    file_path = "sample_contracts/NondisclosureAgreement.pdf"
     contract_text = parse_document(file_path)
     
-    print(f"✓ Document parsed successfully")
-    print(f"✓ Document length: {len(contract_text)} characters")
-    print(f"\nFirst 300 characters of extracted text:")
-    print("-" * 60)
-    print(contract_text[:300] + "..." if len(contract_text) > 300 else contract_text)
-    print("-" * 60)
-    print("\nSending to LLM for classification...\n")
-
-    # Build and invoke the classification graph
-    graph = build_graph()
-    result = graph.invoke({
-        "contract_text": contract_text
-    })
-
-    classification_output = result["classification"]
+    print(f"Parsed document length: {len(contract_text)} characters")
+    print(f"First 500 characters of parsed text:\n{contract_text[:500]}\n")
     
-    # Handle both dict (from Pydantic parser) and string (raw LLM response) cases
-    try:
-        if isinstance(classification_output, dict):
-            # Already a dict from Pydantic parser
-            classification_json = classification_output
-        elif isinstance(classification_output, str):
-            # Extract JSON if it's wrapped in markdown code blocks or other text
-            json_str = classification_output
-            if "```json" in json_str:
-                json_start = json_str.find("```json") + 7
-                json_end = json_str.find("```", json_start)
-                json_str = json_str[json_start:json_end].strip()
-            elif "```" in json_str:
-                json_start = json_str.find("```") + 3
-                json_end = json_str.find("```", json_start)
-                json_str = json_str[json_start:json_end].strip()
-            
-            # Parse JSON string
-            classification_json = json.loads(json_str)
-        else:
-            # Convert other types to dict if possible
-            classification_json = dict(classification_output) if hasattr(classification_output, '__dict__') else classification_output
+    contract_text_for_llm = contract_text[:12000]
+    
+    # First get classification
+    graph = build_graph()
+    result = graph.invoke({"contract_text": contract_text_for_llm})
+    
+    classification = result["classification"]
+    print(f"Classification Result:\n{json.dumps(classification, indent=2)}\n")
+    
+    contract_type = classification.get("contract_type", "Unknown")
+    
+    # Retrieve clauses
+    if contract_type != "Unknown":
+        query = f"clauses related to {contract_type}"
+        retrieved_clauses = retrieve_similar_clauses(
+            query=query,
+            contract_type=contract_type,
+            top_k=3
+        )
         
-        # Format and display
-        formatted_output = json.dumps(classification_json, indent=2)
+        print(f"Retrieved {len(retrieved_clauses)} relevant clauses:")
+        print("=" * 80)
         
-        print("=" * 60)
-        print("Classification Result:")
-        print("=" * 60)
-        print(formatted_output)
-        print("=" * 60)
+        for i, clause in enumerate(retrieved_clauses, 1):
+            print(f"{i}. {clause['clause_title']} (Score: {clause['score']:.3f})")
+            print(f"   Jurisdiction: {clause['jurisdiction']}")
+            print(f"   Text: {clause['clause_text'][:200]}...")
+            print()
+    else:
+        retrieved_clauses = []
+        print("Retrieved 0 relevant clauses:")
+        print("=" * 80)
+    
+    # Run analysis with retrieved clauses
+    analysis_result = graph.invoke({
+        "contract_text": contract_text_for_llm,
+        "retrieved_clauses": retrieved_clauses
+    })
+    
+    analysis = analysis_result.get("analysis", {})
+    
+    final_result = {
+        **classification,
+        "retrieved_clauses": retrieved_clauses,
+        "analysis": analysis
+    }
+    
+    print(f"Contract Analysis:")
+    print("=" * 80)
+    if analysis.get("analyzed_clauses"):
+        for clause in analysis["analyzed_clauses"]:
+            status = "Present" if clause.get("present") else "Missing"
+            print(f"{clause.get('clause_title')}: {status}")
+    
+    print(f"\nFinal Result:")
+    print("=" * 80)
+    print(json.dumps(final_result, indent=2))
+    
+    with open("classification_result.json", "w") as f:
+        json.dump(final_result, f, indent=2)
+    
+    with open("classification_result.txt", "w") as f:
+        f.write(f"Contract Classification & Analysis Result\n")
+        f.write("=" * 50 + "\n\n")
+        f.write(f"Contract Type: {final_result.get('contract_type', 'Unknown')}\n")
+        f.write(f"Industry: {final_result.get('industry', 'Unknown')}\n\n")
         
-        # Extract and display key information
-        contract_type = classification_json.get("contract_type", "Unknown")
-        industry = classification_json.get("industry", "Unknown")
+        if final_result.get('data'):
+            f.write("Extracted Data:\n")
+            for item in final_result['data']:
+                f.write(f"- {item.get('name', 'Unknown')}: {item.get('value', 'Unknown')}\n")
         
-        print(f"\n📄 Contract Type: {contract_type}")
-        print(f"🏢 Industry: {industry}\n")
+        if analysis.get("analyzed_clauses"):
+            f.write(f"\nClause Analysis:\n")
+            for clause in analysis["analyzed_clauses"]:
+                status = "Present" if clause.get("present") else "Missing"
+                f.write(f"- {clause.get('clause_title')}: {status}\n")
         
-        # Save as both JSON and text
-        with open("classification_result.json", "w") as f:
-            json.dump(classification_json, f, indent=2)
-        
-        with open("classification_result.txt", "w") as f:
-            f.write(formatted_output)
-        
-        print("✓ Results saved to:")
-        print("  - classification_result.json")
-        print("  - classification_result.txt")
-    except (json.JSONDecodeError, TypeError, ValueError) as e:
-        print("Warning: Could not process classification response")
-        print(f"Response type: {type(classification_output)}")
-        print(f"Raw response:\n{classification_output}")
-        print(f"\nError: {e}")
-        
-        # Save raw output anyway
-        with open("classification_result.txt", "w") as f:
-            if isinstance(classification_output, str):
-                f.write(classification_output)
-            else:
-                f.write(str(classification_output))
-        print("Raw response saved to classification_result.txt")
+        if retrieved_clauses:
+            f.write(f"\nRetrieved Clauses ({len(retrieved_clauses)}):\n")
+            for i, clause in enumerate(retrieved_clauses, 1):
+                f.write(f"{i}. {clause['clause_title']} (Score: {clause['score']:.3f})\n")
+                f.write(f"   {clause['clause_text'][:200]}...\n\n")
+    
+    print("Saved to classification_result.json and classification_result.txt")
 
 if __name__ == "__main__":
     main()

@@ -5,11 +5,10 @@ contract-classifier/venv/
 # Environment files
 .env
 contract-classifier/.env
+env.example
 
 # Python cache
 __pycache__/
 *.pyc
 
-# Generated / data files
-clause.json
 

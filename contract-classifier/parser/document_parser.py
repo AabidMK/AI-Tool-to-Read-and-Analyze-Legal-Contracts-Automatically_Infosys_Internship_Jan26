@@ -1,17 +1,15 @@
-from pathlib import Path
-from docling.document_converter import DocumentConverter
-
+import PyPDF2
 
 def parse_document(file_path: str) -> str:
-    """
-    Parse PDF or DOCX and return the text content
-    """
-    file_path = Path(file_path)
-    if file_path.suffix.lower() not in [".pdf", ".docx"]:
-        raise ValueError("Only PDF and DOCX files are supported")
-
-    converter = DocumentConverter()
-    result = converter.convert(str(file_path))
-
-    # Return the markdown content as text
-    return result.document.export_to_markdown()
+    """Simple PDF parser using PyPDF2"""
+    text = ""
+    try:
+        with open(file_path, 'rb') as file:
+            pdf_reader = PyPDF2.PdfReader(file)
+            for page in pdf_reader.pages:
+                text += page.extract_text() + "\n"
+    except Exception as e:
+        print(f"Error parsing PDF: {e}")
+        return ""
+    
+    return text.strip()
