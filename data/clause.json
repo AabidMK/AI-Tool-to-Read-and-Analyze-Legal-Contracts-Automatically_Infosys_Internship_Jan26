@@ -1,0 +1,109 @@
+[
+  {
+    "contract_type": "General Clauses",
+    "clauses": [
+      {
+        "clause_title": "Severability",
+        "clause_text": "In the event that any provision of this Agreement shall for any reason be determined to be invalid, unlawful, void or unenforceable to any extent, the remainder of this Agreement shall not be impaired or otherwise affected. The parties shall negotiate in good faith to modify this Agreement so as to effect the original intent of the parties as closely as possible.",
+        "metadata": {
+          "source": "Gavel Clause Library",
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2024-05-10"
+        }
+      },
+      {
+        "clause_title": "Entire Agreement",
+        "clause_text": "This Agreement is the entire, final, complete, and fully integrated agreement between the Parties with respect to the subject matter hereof and hereby replaces any prior and contemporaneous agreements or communications between the Parties, whether written, oral, electronic or otherwise relating to its subject matter. Should there be any inconsistency or ambiguity between the terms of this agreement or agreements prior and contemporaneous, this agreement shall control.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.1",
+          "last_updated": "2024-05-10"
+        }
+      },
+      {
+        "clause_title": "Acknowledgment of Counsel",
+        "clause_text": "Each Party hereto has received independent legal advice regarding this Agreement and their respective rights and obligations set forth in this Agreement.",
+        "metadata": {
+          "jurisdiction": "Global/Standard",
+          "version": "1.0",
+          "last_updated": "2024-05-10"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Employment Agreement",
+    "clauses": [
+      {
+        "clause_title": "Intellectual Property Ownership",
+        "clause_text": "The Company shall retain all rights, title and interest and Intellectual Property Rights in any Company Intellectual Property created, conceived, developed, contributed to or improved upon by the Employee during the course of his Employment. Any and all copyrightable works that are prepared by the Employee, within his scope of service, is 'work for hire' under applicable law and the Company will be considered the first owner.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "OS v. 1",
+          "last_updated": "2016-11-01"
+        }
+      },
+      {
+        "clause_title": "Confidentiality Obligations",
+        "clause_text": "The Employee agrees to hold in the strictest confidence, and not to use, except for the benefit of the Company and its Affiliates, and absolutely refrain from in any manner divulging, discussing, disclosing the Confidential Information to any third party without the written authorisation of the Company.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "OS v. 1",
+          "last_updated": "2016-11-01"
+        }
+      },
+      {
+        "clause_title": "Non-Solicitation of Employees and Clients",
+        "clause_text": "During the Employment Period and for 12 months thereafter, Executive shall not directly or indirectly (i) solicit or recruit any employee, consultant or independent contractor of the Company to terminate employment, or (ii) solicit, entice or induce any customer, vendor, or business development partner to cease doing business with or diminish its relationship with the Company.",
+        "metadata": {
+          "jurisdiction": "USA/Standard",
+          "version": "Zeta-Global-v1",
+          "last_updated": "2024-05-10"
+        }
+      },
+      {
+        "clause_title": "Non-Solicitation (General Advertisement Exception)",
+        "clause_text": "Executive shall not solicit any employee to leave the employ of the Company; provided, that the placement of general advertisements in newspapers, magazines, or electronic media not specifically targeted shall not, by itself, constitute a breach of this subsection.",
+        "metadata": {
+          "jurisdiction": "USA/Standard",
+          "version": "Surgical-Care-v2",
+          "last_updated": "2024-05-10"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Government Standard (FAR)",
+    "clauses": [
+      {
+        "clause_title": "Termination for Convenience",
+        "clause_text": "The Government may terminate performance of work under this contract in whole or, from time to time, in part if the Contracting Officer determines that a termination is in the Government’s interest. Upon receipt of notice, the Contractor shall immediately stop work, terminate subcontracts, and protect property related to the contract.",
+        "metadata": {
+          "jurisdiction": "Federal (USA)",
+          "version": "FAR 52.249-2",
+          "last_updated": "2012-04-01"
+        }
+      },
+      {
+        "clause_title": "Audit and Records Maintenance",
+        "clause_text": "The Contractor shall maintain all records and documents relating to the terminated portion of this contract for 3 years after final settlement. The Contractor shall make these records and documents available to the Government at all reasonable times without direct charge.",
+        "metadata": {
+          "jurisdiction": "Federal (USA)",
+          "version": "FAR 52.249-2(n)",
+          "last_updated": "2012-04-01"
+        }
+      },
+      {
+        "clause_title": "Audit and Records-Negotiation",
+        "clause_text": "The Contractor shall maintain and the Contracting Officer, or an authorized representative, shall have the right to examine and audit all records and other evidence sufficient to reflect properly all costs claimed to have been incurred or anticipated to be incurred directly or indirectly in performance of this contract. This right includes inspection at all reasonable times of the Contractor’s plants. The Contractor shall make available records until 3 years after final payment under this contract or for any longer period required by statute.",
+        "metadata": {
+          "jurisdiction": "US-Federal",
+          "version": "FAR 52.215-2",
+          "last_updated": "2020-06-01",
+          "primary_agent": "Compliance/Finance"
+        }
+      }
+    ]
+  }
+]

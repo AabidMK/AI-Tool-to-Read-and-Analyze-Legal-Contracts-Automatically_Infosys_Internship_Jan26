@@ -1,6 +1,5 @@
 from pathlib import Path
 from typing import Union
-
 from docling.document_converter import DocumentConverter
 from docling.datamodel.base_models import InputFormat
 
