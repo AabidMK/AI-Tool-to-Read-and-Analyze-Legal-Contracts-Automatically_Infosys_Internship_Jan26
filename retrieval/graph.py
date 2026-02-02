@@ -9,8 +9,8 @@ class RetrievalState(TypedDict):
 
 
 def build_retrieval_graph():
-    g = StateGraph(RetrievalState)
-    g.add_node("retrieve", retrieval_node)
-    g.set_entry_point("retrieve")
-    g.add_edge("retrieve", END)
-    return g.compile()
+    graph = StateGraph(RetrievalState)
+    graph.add_node("retrieve", retrieval_node)
+    graph.set_entry_point("retrieve")
+    graph.add_edge("retrieve", END)
+    return graph.compile()
