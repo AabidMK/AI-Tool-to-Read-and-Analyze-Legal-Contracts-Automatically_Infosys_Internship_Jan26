@@ -58,7 +58,11 @@ class ContractState(TypedDict):
     contract_type: Optional[str]
     industry: Optional[str]
     clauses: List[dict]
-    final_analysis: Optional[str]
+    analysis_report: Optional[str]
+    review_plan: List[str]          
+    sections: List[str]             
+    modifications: List[dict]       
+    final_report: Optional[str] 
 
 
 def parse_node(state: ContractState):
@@ -175,8 +179,86 @@ EXPECTED CLAUSES:
     response = llm.invoke(messages)
 
     return {
-        "final_analysis": response.content
+        "analysis_report": response.content
     }
+
+def create_review_plan_node(state: ContractState):
+    system_prompt = f"""
+You are a legal contract review planner.
+
+Create a role-based review plan for the following contract:
+- Contract Type: {state['contract_type']}
+- Industry: {state['industry']}
+
+Each step must be a specific legal expert role.
+Generate 3–5 roles only.
+Avoid generic roles.
+"""
+
+    messages = [
+        SystemMessage(content=system_prompt),
+        HumanMessage(content="Generate the review roles.")
+    ]
+
+    result = llm.invoke(messages)
+
+    roles = [
+    r.strip("-* ").strip()
+    for r in result.content.split("\n")
+    if "Role" in r
+]
+
+
+    return {"review_plan": roles}
+
+
+def execute_step_node(state: ContractState):
+    role = state["review_plan"].pop(0)
+  
+
+    system_prompt = f"""
+You are acting as a {role}.
+
+Review the contract and:
+1. Analyze relevant sections
+2. Identify issues
+3. Suggest up to 3 critical modifications
+"""
+
+    messages = [
+        SystemMessage(content=system_prompt),
+        HumanMessage(content=state["contract_text"])
+    ]
+
+    result = llm.invoke(messages)
+
+    section = f"### {role}\n{result.content}"
+
+    return {
+        "sections": [section],
+        "modifications": []  # optionally parse structured output later
+    }
+
+
+def generate_final_report_node(state):
+    report = []
+
+    report.append("# Contract Review Report\n")
+    report.append(f"**Contract Type:** {state['contract_type']}")
+    report.append(f"**Industry:** {state['industry']}\n")
+
+    if state.get("analysis_report"):
+        report.append("## Clause Analysis\n")
+        report.append(state["analysis_report"])
+
+    report.append("\n## Expert Reviews\n")
+    report.extend(state.get("sections", []))
+
+    return {
+        "final_report": "\n\n".join(report)
+    }
+
+
 
 
 def build_graph():
@@ -186,14 +268,24 @@ def build_graph():
     workflow.add_node("classify", classify_node)
     workflow.add_node("retrieve_clauses", retrieve_clauses_node)
     workflow.add_node("analyze_contract", analyze_contract_node)
-    
+
+    workflow.add_node("create_review_plan", create_review_plan_node)
+    workflow.add_node("execute_step", execute_step_node)
+    workflow.add_node("generate_final_report", generate_final_report_node)
+
     workflow.set_entry_point("parse")
+
     workflow.add_edge("parse", "classify")
     workflow.add_edge("classify", "retrieve_clauses")
     workflow.add_edge("retrieve_clauses", "analyze_contract")
-    workflow.add_edge("analyze_contract", END)
+    workflow.add_edge("analyze_contract", "create_review_plan")
+
+    workflow.add_edge("create_review_plan", "execute_step")
+    workflow.add_edge("execute_step", "generate_final_report")
+    workflow.add_edge("generate_final_report", END)
 
     return workflow.compile()
+
 
 
 
