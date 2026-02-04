@@ -24,7 +24,7 @@ def main():
     
     contract_text_for_llm = contract_text[:12000]
     
-    # First get classification
+    # Get classification first
     graph = build_graph()
     result = graph.invoke({"contract_text": contract_text_for_llm})
     
@@ -41,72 +41,105 @@ def main():
             contract_type=contract_type,
             top_k=3
         )
-        
-        print(f"Retrieved {len(retrieved_clauses)} relevant clauses:")
-        print("=" * 80)
-        
-        for i, clause in enumerate(retrieved_clauses, 1):
-            print(f"{i}. {clause['clause_title']} (Score: {clause['score']:.3f})")
-            print(f"   Jurisdiction: {clause['jurisdiction']}")
-            print(f"   Text: {clause['clause_text'][:200]}...")
-            print()
+        print(f"Retrieved {len(retrieved_clauses)} relevant clauses")
     else:
         retrieved_clauses = []
-        print("Retrieved 0 relevant clauses:")
-        print("=" * 80)
+        print("Retrieved 0 relevant clauses")
     
-    # Run analysis with retrieved clauses
-    analysis_result = graph.invoke({
+    # Run complete analysis pipeline
+    final_result = graph.invoke({
         "contract_text": contract_text_for_llm,
         "retrieved_clauses": retrieved_clauses
     })
     
-    analysis = analysis_result.get("analysis", {})
+    # Extract final report
+    final_report = final_result.get("final_report", {})
     
-    final_result = {
-        **classification,
-        "retrieved_clauses": retrieved_clauses,
-        "analysis": analysis
-    }
-    
-    print(f"Contract Analysis:")
+    print(f"\nFinal Contract Review Report:")
     print("=" * 80)
-    if analysis.get("analyzed_clauses"):
-        for clause in analysis["analyzed_clauses"]:
-            status = "Present" if clause.get("present") else "Missing"
-            print(f"{clause.get('clause_title')}: {status}")
+    print(f"Contract Type: {final_report.get('contract_summary', {}).get('type', 'Unknown')}")
+    print(f"Industry: {final_report.get('contract_summary', {}).get('industry', 'Unknown')}")
+    print(f"Overall Risk: {final_report.get('contract_summary', {}).get('overall_risk_rating', 'Unknown')}")
+    print(f"Expert Analyses: {len(final_report.get('expert_analyses', []))}")
+    print(f"Total Risks: {final_report.get('consolidated_findings', {}).get('total_risks_identified', 0)}")
+    print(f"\nExecutive Summary:")
+    print(final_report.get('executive_summary', 'No summary available'))
     
-    print(f"\nFinal Result:")
-    print("=" * 80)
-    print(json.dumps(final_result, indent=2))
+    # Save results
+    with open("contract_review_report.json", "w") as f:
+        json.dump(final_report, f, indent=2)
     
-    with open("classification_result.json", "w") as f:
-        json.dump(final_result, f, indent=2)
-    
-    with open("classification_result.txt", "w") as f:
-        f.write(f"Contract Classification & Analysis Result\n")
-        f.write("=" * 50 + "\n\n")
-        f.write(f"Contract Type: {final_result.get('contract_type', 'Unknown')}\n")
-        f.write(f"Industry: {final_result.get('industry', 'Unknown')}\n\n")
+    # Generate markdown report
+    with open("contract_review_report.md", "w") as f:
+        f.write("# Comprehensive Contract Review Report\n\n")
         
-        if final_result.get('data'):
-            f.write("Extracted Data:\n")
-            for item in final_result['data']:
-                f.write(f"- {item.get('name', 'Unknown')}: {item.get('value', 'Unknown')}\n")
+        summary = final_report.get('contract_summary', {})
+        f.write("## Contract Summary\n\n")
+        f.write(f"- **Contract Type:** {summary.get('type', 'Unknown')}\n")
+        f.write(f"- **Industry:** {summary.get('industry', 'Unknown')}\n")
+        f.write(f"- **Overall Risk Rating:** {summary.get('overall_risk_rating', 'Unknown')}\n\n")
         
-        if analysis.get("analyzed_clauses"):
-            f.write(f"\nClause Analysis:\n")
-            for clause in analysis["analyzed_clauses"]:
-                status = "Present" if clause.get("present") else "Missing"
-                f.write(f"- {clause.get('clause_title')}: {status}\n")
+        f.write("## Executive Summary\n\n")
+        f.write(f"{final_report.get('executive_summary', 'No summary available')}\n\n")
         
-        if retrieved_clauses:
-            f.write(f"\nRetrieved Clauses ({len(retrieved_clauses)}):\n")
-            for i, clause in enumerate(retrieved_clauses, 1):
-                f.write(f"{i}. {clause['clause_title']} (Score: {clause['score']:.3f})\n")
-                f.write(f"   {clause['clause_text'][:200]}...\n\n")
+        # Missing clauses section
+        missing_clauses = [clause for clause in final_report.get('clause_analysis', []) if not clause.get('present', True)]
+        if missing_clauses:
+            f.write("## Missing Clauses\n\n")
+            for i, clause in enumerate(missing_clauses, 1):
+                f.write(f"### {i}. {clause.get('clause_title', 'Unknown Clause')}\n\n")
+                f.write(f"**Status:** Not Present\n\n")
+                if clause.get('clause_text'):
+                    f.write(f"**Recommended Text:**\n```\n{clause.get('clause_text')}\n```\n\n")
+                metadata = clause.get('metadata', {})
+                if metadata:
+                    f.write(f"**Metadata:**\n")
+                    f.write(f"- Jurisdiction: {metadata.get('jurisdiction', 'N/A')}\n")
+                    f.write(f"- Version: {metadata.get('version', 'N/A')}\n")
+                    f.write(f"- Last Updated: {metadata.get('last_updated', 'N/A')}\n\n")
+        else:
+            f.write("## Missing Clauses\n\n")
+            f.write("✅ All recommended clauses are present in the contract.\n\n")
+        
+        f.write("## Expert Analyses\n\n")
+        for i, analysis in enumerate(final_report.get('expert_analyses', []), 1):
+            f.write(f"### {i}. {analysis.get('role', 'Unknown Role')}\n\n")
+            f.write(f"**Rating:** {analysis.get('rating', 'No Rating')}\n\n")
+            
+            key_findings = analysis.get('key_findings', [])
+            if key_findings:
+                f.write("**Key Findings:**\n")
+                for finding in key_findings:
+                    f.write(f"- {finding}\n")
+                f.write("\n")
+            
+            risks = analysis.get('risks', [])
+            if risks:
+                f.write("**Risks:**\n")
+                for risk in risks:
+                    f.write(f"- {risk}\n")
+                f.write("\n")
+            
+            recommendations = analysis.get('recommendations', [])
+            if recommendations:
+                f.write("**Recommendations:**\n")
+                for rec in recommendations:
+                    f.write(f"- {rec}\n")
+                f.write("\n")
+        
+        findings = final_report.get('consolidated_findings', {})
+        f.write("## Consolidated Findings\n\n")
+        f.write(f"- **Total Risks Identified:** {findings.get('total_risks_identified', 0)}\n")
+        f.write(f"- **Critical Compliance Issues:** {findings.get('critical_compliance_issues', 0)}\n")
+        f.write(f"- **Key Recommendations:** {len(findings.get('key_recommendations', []))}\n\n")
+        
+        key_recs = findings.get('key_recommendations', [])
+        if key_recs:
+            f.write("### Top Recommendations\n\n")
+            for i, rec in enumerate(key_recs, 1):
+                f.write(f"{i}. {rec}\n")
     
-    print("Saved to classification_result.json and classification_result.txt")
+    print("Saved complete report to contract_review_report.json and contract_review_report.md")
 
 if __name__ == "__main__":
     main()

@@ -11,4 +11,13 @@ env.example
 __pycache__/
 *.pyc
 
+# Generated reports and analysis files
+contract-classifier/contract_review_report.json
+contract-classifier/contract_review_report.md
+contract-classifier/nda_analysis_report.json
+contract-classifier/clause.json
+
+# Sample contracts (may contain sensitive data)
+contract-classifier/sample_contracts/
+
 
