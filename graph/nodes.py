@@ -172,3 +172,128 @@ REFERENCE CLAUSES:
     return {
         "analysis_report": parsed
     }
+
+def review_plan_node(state):
+    contract_type = state.get("contract_type")
+    industry = state.get("industry")
+
+    prompt = f"""
+You are a legal contract review planner.
+
+Your task is to generate a review plan where each step is a
+specialized legal role that should review the contract.
+
+Return output strictly in JSON:
+
+{{
+  "review_plan": [
+    "Role 1 Review",
+    "Role 2 Review",
+    "Role 3 Review"
+  ]
+}}
+
+Context:
+- Contract Type: {contract_type}
+- Industry: {industry}
+
+Rules:
+1. Generate only 3–5 specialized roles.
+2. Roles must be specific legal perspectives.
+3. Do NOT include generic roles like "General Review".
+4. Roles must match the contract type and industry.
+
+Examples of roles:
+- Employment Law Specialist Review
+- Intellectual Property Counsel Review
+- Compliance Officer Review
+- Financial Terms Specialist Review
+- Risk Management Review
+- Data Privacy Officer Review
+"""
+
+    response = llm.invoke(prompt)
+    raw = response.content.strip()
+
+    try:
+        parsed = json.loads(raw)
+
+    except json.JSONDecodeError:
+        cleaned = (
+            raw.replace("```json", "")
+               .replace("```", "")
+               .strip()
+        )
+
+        try:
+            parsed = json.loads(cleaned)
+        except json.JSONDecodeError:
+            parsed = {}
+
+    review_plan = parsed.get("review_plan", [])
+
+    return {
+        "review_plan": review_plan,
+        
+    }
+
+
+def execute_all_reviews(state):
+    roles = state.get("review_plan", [])
+    contract_text = state.get("contract_text")
+
+    all_reviews = []
+
+    if not contract_text:
+        return {
+            "all_role_reviews": [{
+                "error": "Contract text missing"
+            }]
+        }
+
+    for role in roles:
+        prompt = f"""
+You are a {role}.
+
+Review the contract strictly from your professional legal perspective.
+
+Return ONLY valid JSON:
+{{
+  "analysis": "Role-specific analysis",
+  "modifications": [
+    {{
+      "original_text": "...",
+      "suggested_text": "...",
+      "reason": "..."
+    }}
+  ]
+}}
+
+CONTRACT TEXT:
+{contract_text[:3000]}
+"""
+
+        response = llm.invoke(prompt)
+        raw = response.content.strip()
+
+        try:
+            parsed = json.loads(raw)
+        except json.JSONDecodeError:
+            cleaned = raw.replace("```json", "").replace("```", "").strip()
+            try:
+                parsed = json.loads(cleaned)
+            except:
+                parsed = {
+                    "analysis": "",
+                    "modifications": []
+                }
+
+        all_reviews.append({
+            "role": role,
+            "analysis": parsed.get("analysis", ""),
+            "modifications": parsed.get("modifications", [])
+        })
+
+    return {
+        "all_role_reviews": all_reviews
+    }
