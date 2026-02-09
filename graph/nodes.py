@@ -75,7 +75,7 @@ def retrieve_clauses_node(state):
 
     # Only use contract_type as the semantic query
     if not contract_type:
-        # If classification failed, return empty for now (as requested)
+        # If classification failed, return empty for now 
         return {"retrieved_clauses": []}
 
     query = f"{contract_type} contract clauses"
@@ -142,7 +142,7 @@ Return output strictly in JSON:
 }}
 
 CONTRACT TEXT:
-{contract_text[:3000]}
+{contract_text[:8000]}
 
 REFERENCE CLAUSES:
 {clause_texts}
