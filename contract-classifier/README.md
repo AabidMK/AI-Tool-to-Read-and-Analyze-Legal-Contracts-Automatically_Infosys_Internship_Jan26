@@ -62,6 +62,43 @@ python verify_ingestion.py
 python main.py
 ```
 
+## API Usage
+
+### Start API Server
+
+```bash
+uvicorn api:app --reload
+```
+
+### Endpoints
+
+**POST /analyze** - Upload contract for analysis
+```bash
+curl -X POST "http://localhost:8000/analyze" \
+  -F "file=@sample_contracts/NondisclosureAgreement.pdf"
+```
+
+Response:
+```json
+{"task_id": "uuid-here", "status": "queued"}
+```
+
+**GET /result/{task_id}** - Get analysis report
+```bash
+curl "http://localhost:8000/result/{task_id}"
+```
+
+**GET /health** - Health check
+```bash
+curl "http://localhost:8000/health"
+```
+
+### Test API
+
+```bash
+python test_api.py
+```
+
 ## Output Example
 
 ```json
@@ -84,14 +121,18 @@ python main.py
 
 ```
 contract-classifier/
-├── main.py                    # Main pipeline
+├── api.py                    # FastAPI application
+├── main.py                   # Main pipeline
 ├── ingestion.py              # Load clauses into Qdrant
 ├── retrieval.py              # Similarity search
 ├── verify_ingestion.py       # Verify setup
+├── test_api.py               # API test script
 ├── requirements.txt          # Dependencies
 ├── .env.example             # Environment template
 ├── clause.json              # Clause knowledge base
 ├── sample_contracts/        # Test contracts
+├── uploads/                 # Uploaded files
+├── results/                 # Analysis reports
 ├── graph/                   # Classification logic
 ├── parser/                  # Document parsing
 └── prompts/                 # LLM prompts

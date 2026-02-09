@@ -1,0 +1,29 @@
+# Environment
+.env
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Generated files
+uploads/
+results/
+classification_result.json
+classification_result.txt
+contract_review_report.json
+contract_review_report.md
+nda_analysis_report.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log

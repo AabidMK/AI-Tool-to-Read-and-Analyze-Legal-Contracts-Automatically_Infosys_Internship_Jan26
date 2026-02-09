@@ -9,3 +9,6 @@ docling
 pydantic
 python-dotenv
 langsmith
+fastapi
+uvicorn
+python-multipart
