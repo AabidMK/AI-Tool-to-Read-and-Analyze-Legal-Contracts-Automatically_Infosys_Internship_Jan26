@@ -6,6 +6,7 @@ from graph.nodes import (
     analyze_contract_node,
     review_plan_node,
     execute_all_reviews,
+    generate_final_report_node
 )
 from graph.state import ContractState
 
@@ -20,6 +21,7 @@ def build_graph():
     builder.add_node("analyze_contract", analyze_contract_node)
     builder.add_node("review_plan_node", review_plan_node)
     builder.add_node("execute_all_reviews", execute_all_reviews)
+    builder.add_node("generate_final_report_node",generate_final_report_node)
 
     # Entry
     builder.set_entry_point("extract_text")
@@ -31,6 +33,7 @@ def build_graph():
     builder.add_edge("analyze_contract", "review_plan_node")
     
     builder.add_edge("review_plan_node","execute_all_reviews")
-    builder.add_edge("execute_all_reviews",END)
+    builder.add_edge("execute_all_reviews","generate_final_report_node")
+    builder.add_edge("generate_final_report_node",END)
 
     return builder.compile()

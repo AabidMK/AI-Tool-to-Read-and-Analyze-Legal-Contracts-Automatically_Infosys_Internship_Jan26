@@ -297,3 +297,54 @@ CONTRACT TEXT:
     return {
         "all_role_reviews": all_reviews
     }
+
+def generate_final_report_node(state):
+    contract_type = state.get("contract_type")
+    industry = state.get("industry")
+    analysis_report = state.get("analysis_report", {})
+    role_reviews = state.get("all_role_reviews", [])
+
+    lines = []
+
+    lines.append("CONTRACT REVIEW REPORT")
+    lines.append("=" * 50)
+    lines.append(f"Contract Type: {contract_type}")
+    lines.append(f"Industry: {industry}\n")
+
+    lines.append("1. CLAUSE ANALYSIS")
+    lines.append("-" * 30)
+
+    for clause in analysis_report.get("clause_comparison", []):
+        lines.append(
+            f"{clause['clause_title']}: {clause['status']}"
+        )
+
+    if analysis_report.get("missing_clauses"):
+        lines.append("\nMissing Clauses:")
+        for mc in analysis_report["missing_clauses"]:
+            lines.append(f"- {mc}")
+
+    if analysis_report.get("suggestions"):
+        lines.append("\nGeneral Suggestions:")
+        for s in analysis_report["suggestions"]:
+            lines.append(f"- {s}")
+
+    lines.append("\n2. ROLE-BASED LEGAL REVIEWS")
+    lines.append("-" * 30)
+
+    for review in role_reviews:
+        lines.append(f"\nRole: {review['role']}")
+        lines.append(review.get("analysis", ""))
+
+        if review.get("modifications"):
+            lines.append("Suggested Modifications:")
+            for m in review["modifications"]:
+                lines.append(
+                    f"- Original: {m['original_text']}\n"
+                    f"  Suggested: {m['suggested_text']}\n"
+                    f"  Reason: {m['reason']}"
+                )
+
+    return {
+        "final_report_text": "\n".join(lines)
+    }

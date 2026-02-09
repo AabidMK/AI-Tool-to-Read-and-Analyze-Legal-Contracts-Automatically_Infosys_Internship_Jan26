@@ -19,7 +19,9 @@ class ContractState(TypedDict):
     missing_clauses: Optional[List[str]]
     suggestions: Optional[List[str]]
 
-    # Review planning
+    # Review 
     review_plan: Optional[List[str]]   # list of roles
 
     all_role_reviews: Optional[List[Dict[str,Any]]]
+
+    final_report_text: Optional[str]
