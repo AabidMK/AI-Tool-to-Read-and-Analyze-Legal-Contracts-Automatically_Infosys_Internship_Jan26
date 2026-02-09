@@ -1,0 +1,69 @@
+[
+  {
+    "contract_type": "General Clauses",
+    "clauses": [
+      {
+        "clause_title": "Severability",
+        "clause_text": "If any provision of this Agreement is held to be invalid, illegal, or unenforceable, the remaining provisions shall continue in full force and effect. The Parties shall negotiate in good faith to replace the invalid provision with a valid provision that most closely reflects the original intent.",
+        "metadata": {
+          "jurisdiction": "Global",
+          "source": "Standard Contract Templates"
+        }
+      },
+      {
+        "clause_title": "Entire Agreement",
+        "clause_text": "This Agreement constitutes the entire agreement between the Parties and supersedes all prior agreements, negotiations, representations, and understandings, whether written or oral, relating to its subject matter.",
+        "metadata": {
+          "jurisdiction": "Global"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Employment Agreement",
+    "clauses": [
+      {
+        "clause_title": "Confidentiality",
+        "clause_text": "The Employee agrees to keep all Confidential Information strictly confidential and shall not disclose such information to any third party during or after the term of employment without prior written consent of the Company.",
+        "metadata": {
+          "jurisdiction": "India",
+          "version": "1.0"
+        }
+      },
+      {
+        "clause_title": "Intellectual Property",
+        "clause_text": "All inventions, discoveries, developments, and works of authorship created by the Employee during the course of employment shall be the exclusive property of the Company and shall be deemed work made for hire.",
+        "metadata": {
+          "jurisdiction": "India"
+        }
+      },
+      {
+        "clause_title": "Non-Solicitation",
+        "clause_text": "During employment and for a period of twelve (12) months thereafter, the Employee shall not solicit or induce any employee or client of the Company to terminate their relationship with the Company.",
+        "metadata": {
+          "jurisdiction": "USA"
+        }
+      }
+    ]
+  },
+  {
+    "contract_type": "Government Standard (FAR)",
+    "clauses": [
+      {
+        "clause_title": "Termination for Convenience",
+        "clause_text": "The Government may terminate this contract, in whole or in part, for its convenience. Upon receipt of the notice of termination, the Contractor shall immediately cease work and take all necessary actions to protect Government property.",
+        "metadata": {
+          "jurisdiction": "US Federal",
+          "reference": "FAR 52.249-2"
+        }
+      },
+      {
+        "clause_title": "Audit and Records",
+        "clause_text": "The Contractor shall maintain all records relating to performance under this contract and shall make such records available for audit by the Government for a period of three (3) years after final payment.",
+        "metadata": {
+          "jurisdiction": "US Federal"
+        }
+      }
+    ]
+  }
+]
