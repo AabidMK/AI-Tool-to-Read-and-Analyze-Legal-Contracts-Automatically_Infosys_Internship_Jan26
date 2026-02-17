@@ -31,8 +31,11 @@ class ChromaClauseStore:
 
             vector = embed_text(embedding_input)
 
+            clause_id = f"{clause['contract_type']}_{clause['clause_title']}"
+            clause_id = clause_id.replace(" ", "_").lower()
+            
             self.collection.add(
-                ids=[str(uuid.uuid4())],
+                ids=[clause_id],
                 embeddings=[vector],
                 documents=[clause["clause_text"]],
                 metadatas=[{
@@ -40,6 +43,7 @@ class ChromaClauseStore:
                     "clause_title": clause["clause_title"]
                 }]
             )
+        self.client.persist()
 
     def similarity_search(self, query_vector, top_k=5, contract_type: str | None = None):
         where_filter = None

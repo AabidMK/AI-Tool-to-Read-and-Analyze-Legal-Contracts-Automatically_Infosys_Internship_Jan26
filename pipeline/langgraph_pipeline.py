@@ -16,11 +16,14 @@ from langchain_openai import ChatOpenAI
 
 
 llm = ChatOpenAI(
-    model="qwen-vl-8b",
     base_url="http://localhost:1234/v1",
     api_key="lm-studio",
-    temperature=0
+    model="qwen2.5-7b-instruct",
+    temperature=0.2,
+    max_tokens=3500
 )
+
+
 
 
 class ContractState(TypedDict):
@@ -39,26 +42,19 @@ clause_store = ChromaClauseStore(CHROMA_DB_PATH)
 clause_retriever = ClauseRetriever(clause_store)
 
 
-def classification_node(state: ContractState) -> ContractState:
+def parse_contract_node(state: ContractState) -> ContractState:
     contract_text = extract_contract_text(state["input_file"])
-    result = classify_contract_node(contract_text)
+    return {**state, "contract_text": contract_text}
 
-    return {
-        "input_file": state["input_file"],
-        "contract_text": contract_text,
-        "result": result,
-        "matched_clauses": [],
-        "review_plan": [],
-        "role_analysis_results": [],
-        "summarized_role_results": [],
-        "final_report": ""
-    }
-
+def classification_node(state: ContractState) -> ContractState:
+    result = classify_contract_node(state["contract_text"])
+    return {**state, "result": result}
 
 def clause_retrieval_node(state: ContractState) -> ContractState:
     matched_clauses = clause_retriever.retrieve(
-        contract_type=state["result"]["contract_type"],
-        top_k=5
+    contract_type=state["result"]["contract_type"],
+    contract_text=state["contract_text"],
+    top_k=5
     )
 
     return {**state, "matched_clauses": matched_clauses}
@@ -103,22 +99,40 @@ def final_report_node(state: ContractState) -> ContractState:
 def build_graph():
     graph = StateGraph(ContractState)
 
+    graph.add_node("parse", parse_contract_node)
     graph.add_node("classify", classification_node)
     graph.add_node("retrieve", clause_retrieval_node)
     graph.add_node("review_plan", review_plan_node)
     graph.add_node("role_analysis", role_analysis_node)
-    graph.add_node("summarize_roles", summarize_roles_node)
     graph.add_node("final_report", final_report_node)
 
-    graph.set_entry_point("classify")
+    graph.set_entry_point("parse")
+
+    graph.add_edge("parse", "classify")
     graph.add_edge("classify", "retrieve")
     graph.add_edge("retrieve", "review_plan")
     graph.add_edge("review_plan", "role_analysis")
-    graph.add_edge("role_analysis", "summarize_roles")
-    graph.add_edge("summarize_roles", "final_report")
+    graph.add_edge("role_analysis", "final_report")
     graph.add_edge("final_report", END)
 
     return graph.compile()
+
+def run_langgraph_pipeline(input_file: str) -> dict:
+    app = build_graph()
+
+    initial_state = {
+        "input_file": input_file,
+        "contract_text": "",
+        "result": {},
+        "matched_clauses": [],
+        "review_plan": [],
+        "role_analysis_results": [],
+        "summarized_role_results": [],
+        "final_report": ""
+    }
+
+    final_state = app.invoke(initial_state)
+    return final_state
 
 
 if __name__ == "__main__":

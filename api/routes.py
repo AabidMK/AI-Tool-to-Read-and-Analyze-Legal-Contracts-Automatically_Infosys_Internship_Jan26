@@ -6,6 +6,8 @@ from api.storage import create_task, get_task
 from api.tasks import run_contract_analysis
 from api.schemas import AnalyzeResponse, ResultResponse
 
+from fastapi.responses import FileResponse
+
 UPLOAD_DIR = "uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
@@ -24,7 +26,7 @@ def analyze_contract(
     with open(file_path, "wb") as f:
         f.write(file.file.read())
 
-    create_task(task_id, file.filename)
+    create_task(task_id)
 
     # Run LangGraph in background
     background_tasks.add_task(
@@ -52,3 +54,19 @@ def get_result(task_id: str):
         "report": task["report"],
         "error": task["error"],
     }
+
+@router.get("/download/{task_id}")
+def download_pdf(task_id: str):
+    task = get_task(task_id)
+
+    if not task or not task.get("pdf_path"):
+        raise HTTPException(status_code=404, detail="PDF not found")
+
+    if not os.path.exists(task["pdf_path"]):
+        raise HTTPException(status_code=404, detail="PDF file missing on disk")
+
+    return FileResponse(
+        path=task["pdf_path"],
+        filename=f"ClauseAI_Report_{task_id}.pdf",
+        media_type="application/pdf"
+    )

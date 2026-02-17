@@ -1,7 +1,7 @@
 import json
 from analysis.prompts import CLAUSE_COMPARISON_PROMPT
 from analysis.schemas import AnalyzeOutput
-
+import re
 
 # --------------------------------------------------
 # Helpers
@@ -87,7 +87,19 @@ Reference Standard Clauses:
     response = llm.invoke(prompt)
 
     try:
-        llm_output = json.loads(response.content)
+        raw_content = response.content
+
+        match = re.search(r"\{.*\}", raw_content, re.DOTALL)
+        if not match:
+            raise ValueError("LLM did not return valid JSON.")
+
+        json_str = match.group()
+
+        try:
+            llm_output = json.loads(json_str)
+        except json.JSONDecodeError:
+            raise ValueError("Failed to parse LLM JSON output.")
+
         llm_output = normalize_llm_output(llm_output, contract_type)
         parsed_output = AnalyzeOutput(**llm_output)
     except json.JSONDecodeError:

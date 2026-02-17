@@ -12,7 +12,11 @@ Rules:
 - Suggest 3 to 5 legal expert roles
 - Each role must have a legal specialization
 - Each role must include clear focus areas
-- Output ONLY valid JSON
+- Output ONLY valid raw JSON
+- Do not include markdown formatting
+- Do not include backticks
+- Do not include explanations
+
 
 Expected JSON format:
 [

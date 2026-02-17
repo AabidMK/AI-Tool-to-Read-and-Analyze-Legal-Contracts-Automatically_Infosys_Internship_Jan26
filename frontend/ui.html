@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClauseAI</title>
+    <link rel="icon" type="image/png" href="clauseai-logo.png">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+
+    <style>
+        body {
+            background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+        }
+
+        .fade-out {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        button {
+            transition: all 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+
+<body class="text-gray-800 min-h-screen">
+
+    <!-- NAVBAR -->
+    <div class="flex items-center space-x-4">
+
+        <div class="w-14 h-14 bg-white rounded-2xl shadow-md flex items-center justify-center">
+            <img src="clauseai-logo.png" alt="ClauseAI Logo" class="w-10 h-10 object-contain">
+        </div>
+
+        <span class="text-xl font-semibold tracking-tight">
+            ClauseAI
+        </span>
+
+    </div>
+
+
+    <!-- HERO SECTION -->
+    <div class="max-w-6xl mx-auto grid grid-cols-2 gap-16 px-16 py-14 items-center">
+
+        <!-- LEFT SIDE -->
+        <div>
+            <p class="text-indigo-600 text-xs font-semibold uppercase tracking-wider mb-4">
+                AI-Powered Legal Automation
+            </p>
+
+            <h2 class="text-4xl font-semibold leading-tight mb-6">
+                Automate Contract Risk Analysis
+            </h2>
+
+            <p class="text-gray-600 text-base leading-relaxed mb-8">
+                Detect litigation exposure, compliance risks, and financial liabilities
+                in seconds using intelligent multi-agent workflows.
+            </p>
+
+            <!-- ONLY START BUTTON -->
+            <button id="startMainBtn" onclick="revealUpload()"
+                class="bg-gray-900 text-white px-6 py-2.5 rounded-lg text-sm font-medium">
+                Start Analysis
+            </button>
+        </div>
+
+        <!-- RIGHT SIDE FLIP CARD -->
+        <div class="relative w-full h-64">
+
+            <!-- FRONT STATE -->
+            <div id="introCard" class="card p-8 rounded-2xl absolute inset-0 flex flex-col items-center justify-center">
+
+                <div
+                    class="w-14 h-14 rounded-xl bg-indigo-100 flex items-center justify-center text-indigo-600 text-xl mb-4">
+                    📄
+                </div>
+
+                <h3 class="text-lg font-semibold mb-2">
+                    Ready to Analyze a Contract?
+                </h3>
+
+                <p class="text-gray-500 text-sm text-center">
+                    Our AI agents will review legal, risk and business impact in seconds.
+                </p>
+
+            </div>
+
+            <!-- UPLOAD STATE -->
+            <div id="uploadCard" class="card p-6 rounded-2xl absolute inset-0 hidden">
+
+                <h3 class="text-center font-medium text-base mb-4">
+                    Upload Contract
+                </h3>
+
+                <div class="border border-dashed border-gray-300 p-5 rounded-lg text-center mb-4 bg-gray-50">
+                    <input type="file" id="fileInput" class="hidden">
+                    <button onclick="document.getElementById('fileInput').click()"
+                        class="text-indigo-600 text-sm font-medium">
+                        Select PDF or DOCX
+                    </button>
+                    <p id="fileName" class="text-gray-500 mt-2 text-xs"></p>
+                </div>
+
+                <button onclick="startAnalysis()"
+                    class="w-full bg-indigo-600 text-white py-2.5 rounded-lg text-sm font-medium">
+                    Analyze Document
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- DASHBOARD SECTION -->
+    <div class="max-w-6xl mx-auto px-16 pb-16 grid grid-cols-2 gap-8">
+
+        <!-- WORKFLOW -->
+        <div class="card p-6 rounded-2xl">
+
+            <h3 class="font-medium text-base mb-6">
+                AI Workflow
+            </h3>
+
+            <div class="space-y-5 text-sm">
+
+                <div class="flex justify-between items-center">
+                    <span>Legal Analyst</span>
+                    <span id="legalStatus" class="text-gray-400">Waiting</span>
+                </div>
+
+                <div class="flex justify-between items-center">
+                    <span>Risk Assessment</span>
+                    <span id="riskStatus" class="text-gray-400">Waiting</span>
+                </div>
+
+                <div class="flex justify-between items-center">
+                    <span>Business Impact</span>
+                    <span id="businessStatus" class="text-gray-400">Waiting</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- REPORT -->
+        <div class="card p-6 rounded-2xl flex flex-col">
+
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="font-medium text-base">Analysis Report</h3>
+                <span id="riskBadge"
+                    class="text-xs px-2 py-1 rounded-full border border-gray-300 text-gray-500 bg-gray-100">
+                    Risk Pending
+                </span>
+            </div>
+
+            <div id="reportContent" class="bg-gray-50 border border-gray-200 rounded-lg 
+                    p-4 max-h-64 overflow-y-auto text-sm">
+                <p class="text-gray-400 text-center text-sm">
+                    AI analysis results will appear here...
+                </p>
+            </div>
+
+            <button id="downloadBtn" onclick="downloadPDF()"
+                class="mt-4 w-full bg-gray-900 text-white py-2.5 rounded-lg text-sm hidden">
+                Download Report (PDF)
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let taskId = null;
+
+        /* Flip card trigger */
+        function revealUpload() {
+
+            const intro = document.getElementById("introCard");
+            const upload = document.getElementById("uploadCard");
+            const startBtn = document.getElementById("startMainBtn");
+
+            intro.classList.add("fade-out");
+
+            setTimeout(() => {
+                intro.classList.add("hidden");
+                upload.classList.remove("hidden");
+            }, 300);
+
+            startBtn.disabled = true;
+            startBtn.classList.remove("bg-gray-900");
+            startBtn.classList.add("bg-gray-400", "cursor-not-allowed");
+        }
+
+        /* Show filename */
+        document.getElementById('fileInput').addEventListener('change', function () {
+            document.getElementById('fileName').innerText =
+                this.files[0] ? this.files[0].name : "";
+        });
+
+        /* Analyze API */
+        async function startAnalysis() {
+
+            const file = document.getElementById("fileInput").files[0];
+            if (!file) {
+                alert("Please upload a file first.");
+                return;
+            }
+
+            document.getElementById("legalStatus").innerText = "Processing...";
+            document.getElementById("legalStatus").className = "text-indigo-600";
+
+            const formData = new FormData();
+            formData.append("file", file);
+
+            const response = await fetch("http://127.0.0.1:8000/analyze", {
+                method: "POST",
+                body: formData
+            });
+
+            const data = await response.json();
+            taskId = data.task_id;
+
+            pollResult();
+        }
+
+        /* Poll result */
+        function pollResult() {
+
+            const interval = setInterval(async () => {
+
+                const response = await fetch(`http://127.0.0.1:8000/result/${taskId}`);
+                const data = await response.json();
+
+                if (data.status === "completed") {
+
+                    clearInterval(interval);
+
+                    ["legal", "risk", "business"].forEach(step => {
+                        document.getElementById(step + "Status").innerText = "Completed";
+                        document.getElementById(step + "Status").className = "text-green-600 font-medium";
+                    });
+
+                    document.getElementById("reportContent").innerHTML =
+                        data.report.replace(/\n/g, "<br>");
+
+                    document.getElementById("downloadBtn").classList.remove("hidden");
+
+                    detectRiskLevel(data.report);
+                }
+
+            }, 2000);
+        }
+
+        /* Risk badge */
+        function detectRiskLevel(report) {
+
+            const badge = document.getElementById("riskBadge");
+
+            if (report.includes("High")) {
+                badge.innerText = "High Risk";
+                badge.className = "text-xs px-2 py-1 rounded-full border border-red-200 text-red-600 bg-red-50";
+            }
+            else if (report.includes("Moderate")) {
+                badge.innerText = "Moderate Risk";
+                badge.className = "text-xs px-2 py-1 rounded-full border border-yellow-200 text-yellow-700 bg-yellow-50";
+            }
+            else {
+                badge.innerText = "Low Risk";
+                badge.className = "text-xs px-2 py-1 rounded-full border border-green-200 text-green-600 bg-green-50";
+            }
+        }
+
+        /* Download */
+        function downloadPDF() {
+            if (!taskId) return;
+            window.location.href = `http://127.0.0.1:8000/download/${taskId}`;
+        }
+
+    </script>
+
+</body>
+
+</html>
