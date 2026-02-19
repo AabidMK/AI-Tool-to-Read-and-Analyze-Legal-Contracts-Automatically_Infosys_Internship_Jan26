@@ -18,12 +18,7 @@ from fastapi.staticfiles import StaticFiles
 import google.generativeai as genai
 from langgraph.graph import StateGraph, START, END
 
-
-# =====================================================
-# 🔑 PUT YOUR GEMINI API KEY HERE
-# =====================================================
-
-GEMINI_API_KEY = "AIzaSyC7tJ-WbObq08SP_4BzeaRcPmdc1kk94e8"
+GEMINI_API_KEY = API_KEY #INSERT API KEY HERE(GEMINI)
 
 genai.configure(api_key=GEMINI_API_KEY)
 MODEL_NAME = "gemini-flash-latest"
@@ -43,17 +38,9 @@ def call_gemini(prompt: str):
     return json.loads(response.text)
 
 
-# =====================================================
-# DEVICE
-# =====================================================
-
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 print(f"Using device: {DEVICE}")
 
-
-# =====================================================
-# PATHS
-# =====================================================
 
 UPLOAD_DIR = Path("uploads")
 UPLOAD_DIR.mkdir(exist_ok=True)
@@ -61,30 +48,16 @@ UPLOAD_DIR.mkdir(exist_ok=True)
 REPORT_DIR = Path("reports")
 REPORT_DIR.mkdir(exist_ok=True)
 
-
-# =====================================================
-# EMBEDDINGS
-# =====================================================
-
 embedding_model = SentenceTransformer(
     "all-MiniLM-L6-v2",
     device=DEVICE
 )
-
-
-# =====================================================
-# CHROMA
-# =====================================================
 
 chroma_client = chromadb.Client()
 clause_collection = chroma_client.get_or_create_collection(
     name="legal_clauses"
 )
 
-
-# =====================================================
-# STATE
-# =====================================================
 
 class ContractState(TypedDict, total=False):
     legal_text: str
@@ -95,11 +68,6 @@ class ContractState(TypedDict, total=False):
     roles: List[dict]
     insights: List[dict]
     final_report: dict
-
-
-# =====================================================
-# INGEST CLAUSES
-# =====================================================
 
 def ingest_clauses():
     if not Path("clause.json").exists():
@@ -132,10 +100,6 @@ def ingest_clauses():
 if clause_collection.count() == 0:
     ingest_clauses()
 
-
-# =====================================================
-# GRAPH NODES
-# =====================================================
 
 def classification_node(state: ContractState):
     prompt = f"""
@@ -245,10 +209,6 @@ Insights:
 """
     return {"final_report": call_gemini(prompt)}
 
-
-# =====================================================
-# GRAPH
-# =====================================================
 
 graph = StateGraph(ContractState)
 
