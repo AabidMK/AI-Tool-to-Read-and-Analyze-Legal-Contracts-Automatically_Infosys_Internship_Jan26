@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Legal Contract Analyzer</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <h1>📄 Legal Contract Analyzer</h1>
+
+    <input type="file" id="fileInput" />
+    <button onclick="uploadFile()">Analyze</button>
+
+    <div id="loading" class="hidden">
+      <div class="spinner"></div>
+      <p>Analyzing Contract... Please wait</p>
+    </div>
+
+    <div id="reportSection" class="hidden">
+      <h2>📊 Analysis Report</h2>
+      <div id="reportContent"></div>
+      <button onclick="downloadPDF()">Download PDF</button>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
