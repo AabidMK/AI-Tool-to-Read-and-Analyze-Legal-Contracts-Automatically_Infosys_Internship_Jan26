@@ -1,36 +1,80 @@
-from vectorstore.chroma_store import load_chroma
+from typing import TypedDict, List, Dict, Any
+from vectordb.client import get_vector_collection
 
-vectorstore = load_chroma()
 
-def retrieval_node(state: dict):
-    query = state["query"]
-    contract_type = state["contract_type"].strip()
+class RetrievalState(TypedDict):
+    contract_text: str
+    classification: dict
+    retrieved_clauses: List[Dict[str, Any]]
 
-    results = vectorstore.similarity_search_with_score(
-        query=query,
-        k=10,
-        filter={"contract_type": contract_type}
+
+def retrieval_node(state: RetrievalState) -> RetrievalState:
+    """
+    Retrieval node:
+    - Uses classified contract_type
+    - Executes filtered similarity search
+    - Returns top relevant standard clauses
+    """
+
+    contract_text = state["contract_text"]
+    classification = state["classification"]
+
+    contract_type = classification.get("contract_type")
+
+    collection = get_vector_collection()
+
+    # Run similarity search with metadata filter
+    results = collection.query(
+        query_texts=[contract_text],
+        n_results=5,
+        where={"contract_type": contract_type}
     )
 
-    seen = set()
-    cleaned = []
+    retrieved_clauses = []
 
-    for doc, score in results:
-        if score > 0.5:
-            continue
+    # Safety check in case nothing returned
+    documents = results.get("documents", [])
+    metadatas = results.get("metadatas", [])
 
-        key = (doc.metadata["clause_title"], doc.page_content)
-        if key in seen:
-            continue
-        seen.add(key)
+    if documents and metadatas:
+        docs = documents[0]
+        metas = metadatas[0]
 
-        cleaned.append({
-            "clause_title": doc.metadata["clause_title"],
-            "clause_text": doc.page_content,
-            "score": round(score, 4)
-        })
+        for doc, meta in zip(docs, metas):
+            retrieved_clauses.append(
+                {
+                    "clause_title": meta.get("clause_title"),
+                    "clause_text": doc,
+                    "metadata": meta
+                }
+            )
 
-    cleaned.sort(key=lambda x: x["score"])
+    # Fallback to general clauses if no results
+    if not retrieved_clauses:
+        fallback_results = collection.query(
+            query_texts=[contract_text],
+            n_results=5,
+            where={"contract_type": "General Clauses"}
+        )
 
-    return {"retrieved_clauses": cleaned}
+        documents = fallback_results.get("documents", [])
+        metadatas = fallback_results.get("metadatas", [])
 
+        if documents and metadatas:
+            docs = documents[0]
+            metas = metadatas[0]
+
+            for doc, meta in zip(docs, metas):
+                retrieved_clauses.append(
+                    {
+                        "clause_title": meta.get("clause_title"),
+                        "clause_text": doc,
+                        "metadata": meta
+                    }
+                )
+
+    return {
+        "contract_text": contract_text,
+        "classification": classification,
+        "retrieved_clauses": retrieved_clauses
+    }

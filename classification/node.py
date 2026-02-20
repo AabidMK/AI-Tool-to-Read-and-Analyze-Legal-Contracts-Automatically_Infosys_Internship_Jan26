@@ -1,47 +1,28 @@
-from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import PydanticOutputParser
-from classification.schema import ContractClassification
-from classification.llm import get_llm
+import json
+from typing import TypedDict
+from langchain_core.messages import SystemMessage, HumanMessage
 
-llm = get_llm()
-parser = PydanticOutputParser(pydantic_object=ContractClassification)
+from config.llm import get_llm
+from .prompt import classification_prompt
 
-prompt = ChatPromptTemplate.from_messages(
-    [
-        (
-            "system",
-            "You are a strict JSON generator. "
-            "Do not explain. Do not summarize. "
-            "Return ONLY valid JSON. No markdown. No text."
-        ),
-        (
-            "human",
-            """
-Classify the contract below.
+class ClassificationState(TypedDict):
+    contract_text: str
+    classification: dict
 
-Rules:
-- Output must be VALID JSON
-- Output must contain ONLY the keys shown
-- Do NOT add extra text
+llm = get_llm(temperature=0)
 
-Output format:
-{{
-  "contract_type": "string",
-  "industry": "string"
-}}
+def classification_node(state: ClassificationState) -> ClassificationState:
+    contract_text = state["contract_text"]
 
-Contract text:
---------------
-{contract_text}
-"""
-        )
+    messages = [
+        SystemMessage(content=classification_prompt),
+        HumanMessage(content=contract_text)
     ]
-)
 
+    response = llm.invoke(messages)
+    classification = json.loads(response.content)
 
-chain = prompt | llm | parser
-
-
-def classify_contract(markdown_text: str) -> dict:
-    result = chain.invoke({"contract_text": markdown_text[:6000]})
-    return result.dict()
+    return {
+        "contract_text": contract_text,
+        "classification": classification
+    }

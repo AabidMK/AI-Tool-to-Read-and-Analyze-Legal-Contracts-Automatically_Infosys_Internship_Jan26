@@ -1,22 +1,12 @@
-from typing import TypedDict, List, Dict
 from langgraph.graph import StateGraph, END
-from classification.node import classify_contract
-
-
-class ClassificationState(TypedDict):
-    markdown_text: str
-    classification: dict
-
-def classification_node(state: ClassificationState):
-    return {
-        "classification": classify_contract(state["markdown_text"])
-    }
-
+from .node import classification_node, ClassificationState
 
 def build_classification_graph():
     graph = StateGraph(ClassificationState)
-    graph.add_node("classify", classification_node)
-    graph.set_entry_point("classify")
-    graph.add_edge("classify", END)
+
+    graph.add_node("classify_contract",classification_node)
+
+    graph.set_entry_point("classify_contract")
+    graph.add_edge("classify_contract", END)
 
     return graph.compile()
