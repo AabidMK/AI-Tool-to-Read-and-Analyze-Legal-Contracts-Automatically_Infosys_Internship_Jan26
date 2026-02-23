@@ -1,23 +1,14 @@
-from fastapi import FastAPI, UploadFile, File, HTTPException, BackgroundTasks
-from fastapi.responses import JSONResponse, FileResponse
-from fastapi.middleware.cors import CORSMiddleware
+from flask import Flask, render_template, request, jsonify, send_file
 import uuid
 import json
 from pathlib import Path
+from threading import Thread
 from datetime import datetime
 from graph.classification_graph import build_graph
 from parser.document_parser import parse_document
 from retrieval import retrieve_similar_clauses
 
-app = FastAPI(title="Contract Classifier API")
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app = Flask(__name__)
 
 UPLOAD_DIR = Path("uploads")
 RESULTS_DIR = Path("results")
@@ -99,108 +90,109 @@ def generate_markdown_report(report: dict, task_id: str) -> str:
     
     return str(md_path)
 
-def process_contract(task_id: str, file_path: str):
+def process_contract(task_id, file_path):
     try:
-        print(f"[{task_id}] Starting processing...")
-        tasks[task_id]["status"] = "processing"
+        tasks[task_id]['status'] = 'processing'
         
-        print(f"[{task_id}] Parsing document...")
         contract_text = parse_document(file_path)
         contract_text_for_llm = contract_text[:12000]
         
-        print(f"[{task_id}] Building graph and running analysis...")
         graph = build_graph()
+        result = graph.invoke({"contract_text": contract_text_for_llm})
         
-        # Run the graph once with the contract text
-        final_result = graph.invoke({"contract_text": contract_text_for_llm})
+        classification = result["classification"]
+        contract_type = classification.get("contract_type", "Unknown")
+        
+        retrieved_clauses = []
+        if contract_type != "Unknown":
+            query = f"clauses related to {contract_type}"
+            retrieved_clauses = retrieve_similar_clauses(
+                query=query,
+                contract_type=contract_type,
+                top_k=3
+            )
+        
+        final_result = graph.invoke({
+            "contract_text": contract_text_for_llm,
+            "retrieved_clauses": retrieved_clauses
+        })
         
         report = final_result.get("final_report", {})
-        print(f"[{task_id}] Report generated, saving...")
         
         result_path = RESULTS_DIR / f"{task_id}.json"
         with open(result_path, "w") as f:
             json.dump(report, f, indent=2)
         
-        print(f"[{task_id}] Generating markdown report...")
         md_path = generate_markdown_report(report, task_id)
         
-        print(f"[{task_id}] Marking as completed...")
-        tasks[task_id]["status"] = "completed"
-        tasks[task_id]["result_path"] = str(result_path)
-        tasks[task_id]["md_path"] = md_path
-        tasks[task_id]["completed_at"] = datetime.now().isoformat()
+        tasks[task_id]['status'] = 'completed'
+        tasks[task_id]['report'] = report
+        tasks[task_id]['md_path'] = md_path
+        tasks[task_id]['completed_at'] = datetime.now().isoformat()
         
-        print(f"[{task_id}] ✅ Processing complete!")
-        
-        # Cleanup uploaded file after processing
         Path(file_path).unlink(missing_ok=True)
         
     except Exception as e:
-        print(f"[{task_id}] ❌ Error: {str(e)}")
-        import traceback
-        traceback.print_exc()
-        tasks[task_id]["status"] = "failed"
-        tasks[task_id]["error"] = str(e)
-        # Cleanup uploaded file even on failure
+        tasks[task_id]['status'] = 'failed'
+        tasks[task_id]['error'] = str(e)
         Path(file_path).unlink(missing_ok=True)
 
-@app.post("/analyze")
-async def analyze_contract(background_tasks: BackgroundTasks, file: UploadFile = File(...)):
-    if not file.filename.endswith(".pdf"):
-        raise HTTPException(status_code=400, detail="Only PDF files are supported")
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+@app.route('/analyze', methods=['POST'])
+def analyze():
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file uploaded'}), 400
+    
+    file = request.files['file']
+    if not file.filename.endswith('.pdf'):
+        return jsonify({'error': 'Only PDF files allowed'}), 400
     
     task_id = str(uuid.uuid4())
     file_path = UPLOAD_DIR / f"{task_id}_{file.filename}"
-    
-    with open(file_path, "wb") as f:
-        content = await file.read()
-        f.write(content)
+    file.save(file_path)
     
     tasks[task_id] = {
-        "task_id": task_id,
-        "filename": file.filename,
-        "status": "queued",
-        "created_at": datetime.now().isoformat(),
-        "file_path": str(file_path)
+        'task_id': task_id,
+        'filename': file.filename,
+        'status': 'queued',
+        'created_at': datetime.now().isoformat(),
+        'file_path': str(file_path)
     }
     
-    background_tasks.add_task(process_contract, task_id, str(file_path))
+    Thread(target=process_contract, args=(task_id, str(file_path))).start()
     
-    return {"task_id": task_id, "status": "queued"}
+    return jsonify({'task_id': task_id, 'status': 'queued'})
 
-@app.get("/result/{task_id}")
-async def get_result(task_id: str):
+@app.route('/result/<task_id>')
+def get_result(task_id):
     if task_id not in tasks:
-        raise HTTPException(status_code=404, detail="Task not found")
+        return jsonify({'error': 'Task not found'}), 404
     
     task = tasks[task_id]
-    
-    if task["status"] == "completed":
-        result_path = Path(task["result_path"])
-        with open(result_path, "r") as f:
-            report = json.load(f)
-        return {"task_id": task_id, "status": "completed", "report": report}
-    
-    return {"task_id": task_id, "status": task["status"], "error": task.get("error")}
+    return jsonify({
+        'status': task['status'],
+        'report': task.get('report'),
+        'error': task.get('error')
+    })
 
-@app.get("/download/{task_id}")
-async def download_report(task_id: str):
+@app.route('/download/<task_id>')
+def download(task_id):
     if task_id not in tasks:
-        raise HTTPException(status_code=404, detail="Task not found")
+        return jsonify({'error': 'Task not found'}), 404
     
     task = tasks[task_id]
+    if task['status'] != 'completed':
+        return jsonify({'error': 'Report not ready'}), 400
     
-    if task["status"] != "completed":
-        raise HTTPException(status_code=400, detail="Report not ready")
-    
-    md_path = Path(task["md_path"])
-    return FileResponse(md_path, filename=f"contract_report_{task_id}.md", media_type="text/markdown")
+    md_path = Path(task['md_path'])
+    return send_file(md_path, as_attachment=True, download_name=f'contract_report_{task_id}.md')
 
-@app.get("/health")
-async def health():
-    return {"status": "healthy"}
+@app.route('/health')
+def health():
+    return jsonify({'status': 'healthy'})
 
-
-if __name__ == "__main__":
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+if __name__ == '__main__':
+    app.run(debug=True, port=5000)

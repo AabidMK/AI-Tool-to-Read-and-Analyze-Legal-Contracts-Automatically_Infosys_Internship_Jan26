@@ -20,4 +20,24 @@ contract-classifier/clause.json
 # Sample contracts (may contain sensitive data)
 contract-classifier/sample_contracts/
 
+# Uploads and results
+contract-classifier/uploads/*
+!contract-classifier/uploads/.gitkeep
+contract-classifier/results/*
+!contract-classifier/results/.gitkeep
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
 

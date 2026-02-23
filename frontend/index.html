@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LexAI — Contract Classifier</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="logo">
+    <div class="logo-mark">Lex<span>AI</span></div>
+    <div class="logo-sub">Contract Intelligence</div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-label">Workspace</div>
+    <div class="nav-item active">
+      <span class="nav-icon">⬡</span> Analyze
+    </div>
+  </nav>
+
+  <div class="services">
+    <div class="services-title">Services</div>
+    <div class="service-row">
+      <span class="service-name">Backend API</span>
+      <span class="service-dot" id="apiStatus"></span>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+  <div class="topbar">
+    <div class="page-title">Analyze <span>/ Upload Contract</span></div>
+    <div class="topbar-actions">
+      <button class="btn" onclick="resetUI()">↺ Reset</button>
+      <button class="btn btn-primary" onclick="document.getElementById('fileInput').click()">
+        + Upload PDF
+      </button>
+    </div>
+  </div>
+
+  <div class="content" id="mainContent">
+
+    <!-- UPLOAD ZONE -->
+    <div class="upload-zone fade-up" id="uploadZone"
+      ondragover="event.preventDefault(); this.classList.add('dragover')"
+      ondragleave="this.classList.remove('dragover')"
+      ondrop="handleDrop(event)"
+      onclick="document.getElementById('fileInput').click()">
+      <span class="upload-icon">⬡</span>
+      <div class="upload-title">Drop your contract here</div>
+      <div class="upload-sub">
+        Supports <strong>PDF</strong> files · Powered by Phi-3 Mini<br>
+        Classification · Clause Retrieval · Expert Analysis
+      </div>
+      <input type="file" id="fileInput" class="upload-input" accept=".pdf" onchange="handleFile(event)">
+    </div>
+
+    <!-- PIPELINE -->
+    <div class="pipeline fade-up-2" id="pipeline">
+      <div class="pipeline-step" id="step1">
+        <div class="step-circle">📄</div>
+        <div class="step-label">PDF<br>Parse</div>
+      </div>
+      <div class="pipeline-step" id="step2">
+        <div class="step-circle">🧠</div>
+        <div class="step-label">Classify</div>
+      </div>
+      <div class="pipeline-step" id="step3">
+        <div class="step-circle">🔍</div>
+        <div class="step-label">Retrieve<br>Clauses</div>
+      </div>
+      <div class="pipeline-step" id="step4">
+        <div class="step-circle">⚖️</div>
+        <div class="step-label">Expert<br>Analysis</div>
+      </div>
+      <div class="pipeline-step" id="step5">
+        <div class="step-circle">✦</div>
+        <div class="step-label">Report<br>Ready</div>
+      </div>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="resultsArea" style="display:none;">
+      <div class="results-grid fade-up">
+
+        <!-- LEFT: CONTRACT SUMMARY -->
+        <div>
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Contract Summary</div>
+              <button class="btn" style="padding:4px 10px; font-size:10px;" onclick="downloadReport()">Download MD</button>
+            </div>
+            <div class="card-body" id="summaryBody"></div>
+          </div>
+        </div>
+
+        <!-- RIGHT: ANALYSES -->
+        <div>
+          <div class="card" style="height: 100%;">
+            <div class="card-header">
+              <div class="card-title">Expert Analyses</div>
+            </div>
+            <div class="clauses-list" id="analysesList"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATUS BAR -->
+  <div class="status-bar">
+    <div class="status-item"><div class="status-dot s-green"></div> API Ready</div>
+    <div class="status-item" style="margin-left: auto; color: var(--muted2);">v1.0.0</div>
+  </div>
+</main>
+
+<!-- DETAIL DRAWER -->
+<div class="overlay" id="overlay" onclick="closeDrawer()"></div>
+<div class="drawer" id="drawer">
+  <div class="drawer-header">
+    <div class="drawer-title" id="drawerTitle">Analysis Detail</div>
+    <button class="drawer-close" onclick="closeDrawer()">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
