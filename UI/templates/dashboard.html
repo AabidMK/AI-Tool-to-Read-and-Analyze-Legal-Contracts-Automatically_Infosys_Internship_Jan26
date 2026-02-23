@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="heading">Dashboard ✨</div>
+  <div class="sub">Welcome back! Here's your contract analysis overview</div>
+  <div class="grid">
+    <div class="stat-card accent-purple">
+      <div>
+        <div class="stat-title">Total Analyses</div>
+        <div class="stat-value">{{ total }}</div>
+      </div>
+      <div class="icon-badge">📄</div>
+    </div>
+    <div class="stat-card accent-red">
+      <div>
+        <div class="stat-title">High Risk Contracts</div>
+        <div class="stat-value">{{ high_risk }}</div>
+      </div>
+      <div class="icon-badge">⚠️</div>
+    </div>
+    <div class="stat-card accent-green">
+      <div>
+        <div class="stat-title">Completed</div>
+        <div class="stat-value">{{ completed }}</div>
+      </div>
+      <div class="icon-badge">✔️</div>
+    </div>
+    <div class="stat-card accent-lilac">
+      <div>
+        <div class="stat-title">This Month</div>
+        <div class="stat-value">{{ this_month }}</div>
+      </div>
+      <div class="icon-badge">📈</div>
+    </div>
+  </div>
+  <div class="section" style="margin-top:18px">
+    <div class="row" style="justify-content:space-between">
+      <div class="section-title">Recent Analyses</div>
+      <a href="/history" class="btn-outline">View All</a>
+    </div>
+    {% for r in recent %}
+    <div class="row" style="justify-content:space-between;margin-top:10px">
+      <div>
+        <a href="/results/{{ r.id }}">{{ r.filename }}</a>
+        <div class="muted">{{ r.contract_type }} • {{ r.created_at.strftime('%b %d, %Y') }}</div>
+      </div>
+      <span class="badge">{{ r.risk_level if r.risk_level!='-' else 'Unknown' }}</span>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="grid">
+    <div class="tile-card"> 
+      <div class="icon-badge">➕</div>
+      <div class="muted">New Analysis</div>
+      <div class="sub">Upload and analyze contract</div>
+      <a class="btn" href="/analyze">New Analysis</a>
+    </div>
+    <div class="tile-card">
+      <div class="icon-badge">🗂️</div>
+      <div class="muted">View History</div>
+      <div class="sub">Browse past analyses</div>
+      <a class="btn" href="/history">Open</a>
+    </div>
+    <div class="tile-card">
+      <div class="icon-badge">🔎</div>
+      <div class="muted">Smart Search</div>
+      <div class="sub">Find specific contracts</div>
+    </div>
+    <div class="tile-card">
+      <div class="icon-badge">📊</div>
+      <div class="muted">Analytics</div>
+      <div class="sub">View insights & trends</div>
+    </div>
+  </div>
+  <div class="grid" style="margin-top:16px">
+    <div class="section two">
+      <div class="section-title">Recent Activity</div>
+      {% for r in recent %}
+      <div class="list-item" style="margin-top:8px">
+        <div>{{ r.filename }} analyzed</div>
+        <div class="sev">{{ r.risk_level if r.risk_level!='-' else 'Unknown' }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="section two">
+      <div class="section-title">Risk Distribution</div>
+      <div class="list" style="margin-top:8px">
+        <div class="dist-item">
+          <div class="dist-dot dot-low"></div><div>Low</div>
+          <div class="dist-bar"><div class="fill-low" style="width:{{ dist.low_pct }}%"></div></div>
+          <div>{{ dist.low }}</div>
+        </div>
+        <div class="dist-item">
+          <div class="dist-dot dot-medium"></div><div>Medium</div>
+          <div class="dist-bar"><div class="fill-medium" style="width:{{ dist.medium_pct }}%"></div></div>
+          <div>{{ dist.medium }}</div>
+        </div>
+        <div class="dist-item">
+          <div class="dist-dot dot-high"></div><div>High</div>
+          <div class="dist-bar"><div class="fill-high" style="width:{{ dist.high_pct }}%"></div></div>
+          <div>{{ dist.high }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

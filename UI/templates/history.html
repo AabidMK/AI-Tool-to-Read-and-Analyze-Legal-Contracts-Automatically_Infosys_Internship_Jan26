@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="heading">Analysis History</div>
+  <div class="sub">{{ items|length }} total analyses</div>
+  <div class="card big-card">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Document</th>
+          <th>Type</th>
+          <th>Risk Level</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in items %}
+        <tr>
+          <td><a href="/results/{{ r.id }}">{{ r.filename }}</a></td>
+          <td>{{ r.contract_type }}</td>
+          <td><span class="badge">{{ r.risk_level if r.risk_level!='-' else 'Unknown' }}</span></td>
+          <td>{{ r.status }}</td>
+          <td>{{ r.created_at.strftime('%b %d, %Y') }}</td>
+          <td>
+            <a href="/results/{{ r.id }}" class="btn-outline">View</a>
+            <a href="/export/{{ r.id }}?fmt=pdf" class="btn-outline">PDF</a>
+            <a href="/export/{{ r.id }}?fmt=docx" class="btn-outline">DOCX</a>
+            <a href="/export/{{ r.id }}?fmt=txt" class="btn-outline">TXT</a>
+            <a href="/export/{{ r.id }}?fmt=json" class="btn-outline">JSON</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="heading">Analyze Contract</div>
+  <div class="sub">Upload your contract and select analysis features</div>
+  <div class="card big-card">
+    <form method="post" action="/analyze" enctype="multipart/form-data">
+      <div class="tile">
+        <input type="file" name="file" required>
+        <div class="muted">Supports PDF, DOC, DOCX, TXT</div>
+      </div>
+      <div class="card" style="margin-top:14px">
+        <div class="muted">Select Analysis Features</div>
+        <div class="feature-grid" style="margin-top:12px">
+          <label class="feature"><span>Full Analysis</span><input type="radio" name="features" value="full" checked></label>
+          <label class="feature"><span>Smart Classification</span><input type="radio" name="features" value="classification"></label>
+          <label class="feature"><span>Risk Assessment</span><input type="radio" name="features" value="risk"></label>
+          <label class="feature"><span>Missing Clauses</span><input type="radio" name="features" value="missing"></label>
+          <label class="feature"><span>Multi-Expert Review</span><input type="radio" name="features" value="experts"></label>
+          <label class="feature"><span>Smart Suggestions</span><input type="radio" name="features" value="suggestions"></label>
+        </div>
+      </div>
+      <button class="btn cta" type="submit">Start AI Analysis</button>
+    </form>
+  </div>
+{% endblock %}

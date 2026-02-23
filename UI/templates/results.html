@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="heading">Analysis Results</div>
+  <div class="sub">{{ item.filename }}</div>
+  <div class="section purple">
+    <div class="section-header">
+      <div class="section-title">Professional Summary</div>
+      <div class="chips">
+        <span class="chip">{{ item.contract_type }}</span>
+        <span class="chip">{{ item.risk_level if item.risk_level!='-' else 'Unknown' }}</span>
+      </div>
+    </div>
+    {% if item.summary %}
+    <div class="section-sub">{{ item.summary }}</div>
+    {% endif %}
+  </div>
+  {% set features = item.features %}
+  {% if cls and ('full' in features or 'classification' in features) %}
+  <div class="section">
+    <div class="section-title">Smart Classification</div>
+    <div class="box-grid">
+      <div class="box">
+        <div class="label">Contract Type</div>
+        <div>{{ cls.contract_type }}</div>
+      </div>
+      <div class="box">
+        <div class="label">Industry</div>
+        <div>{{ cls.industry }}</div>
+      </div>
+      <div class="box">
+        <div class="label">Category</div>
+        <div>{{ cls.category }}</div>
+      </div>
+      <div class="box">
+        <div class="label">Jurisdiction</div>
+        <div>{{ cls.jurisdiction }}</div>
+      </div>
+      <div class="box">
+        <div class="label">Duration</div>
+        <div>{{ cls.duration }}</div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% if risk and ('full' in features or 'risk' in features) %}
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Risk Assessment</div>
+      <div class="chips"><span class="chip">{{ risk.level }}</span><span class="chip">{{ risk.score }}/100</span></div>
+    </div>
+    <div class="risk-bar"><div class="fill" style="width:{{ risk.score }}%"></div></div>
+    <div class="list" style="margin-top:10px">
+      {% for f in risk.factors %}
+      <div class="list-item">
+        <div>{{ f.title }}</div>
+        <div class="sev">{{ f.severity }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  {% if miss and ('full' in features or 'missing' in features) %}
+  <div class="section">
+    <div class="section-header">
+      <div class="section-title">Missing Clauses Detected</div>
+      <div class="chip">{{ miss|length }} found</div>
+    </div>
+    {% for m in miss %}
+    <div class="missing-card" style="margin-top:8px">
+      <div class="row" style="justify-content:space-between">
+        <div>{{ m.title }}</div>
+        <span class="badge">{{ m.level }}</span>
+      </div>
+      <div class="sub">{{ m.suggestion }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if exp and ('full' in features or 'experts' in features) %}
+  <div class="section">
+    <div class="section-title">Multi-Expert Review</div>
+    <div class="expert-grid" style="margin-top:8px">
+      {% for e in exp %}
+      <div class="expert">
+        <div class="row" style="justify-content:space-between;align-items:center">
+          <div>{{ e.persona }}</div>
+          <div class="score">{{ e.score }}/100</div>
+        </div>
+        <div class="sub">Key Findings</div>
+        <div>{{ ', '.join(e.key_findings) }}</div>
+        <div class="sub" style="margin-top:8px">Recommendations</div>
+        <div>{{ ', '.join(e.recommendations) }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+  {% if sug and ('full' in features or 'suggestions' in features) %}
+  <div class="section">
+    <div class="section-title">Smart Suggestions</div>
+    {% for s in sug %}
+    <div class="suggestion-card" style="margin-top:8px">
+      <div class="row" style="justify-content:space-between">
+        <div>{{ s.title }}</div>
+        <div class="pill">{{ s.tags|join(', ') }}</div>
+      </div>
+      <div class="sub">{{ s.rationale }}</div>
+      <div class="chips" style="margin-top:8px">
+        {% for a in s.actions %}
+        <span class="chip">{{ a }}</span>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+  <div class="section">
+    <div class="section-title">Export Report</div>
+    <div class="export-grid" style="margin-top:8px">
+      <a href="/export/{{ item.id }}?fmt=pdf" class="export-box">PDF<br><span class="sub">Professional report</span></a>
+      <a href="/export/{{ item.id }}?fmt=txt" class="export-box">TXT<br><span class="sub">Plain text</span></a>
+      <a href="/export/{{ item.id }}?fmt=docx" class="export-box">DOCX<br><span class="sub">Word document</span></a>
+      <a href="/export/{{ item.id }}?fmt=json" class="export-box">JSON<br><span class="sub">Structured data</span></a>
+    </div>
+    <a href="/export/{{ item.id }}?fmt=pdf" class="cta-wide">Download Report</a>
+  </div>
+{% endblock %}

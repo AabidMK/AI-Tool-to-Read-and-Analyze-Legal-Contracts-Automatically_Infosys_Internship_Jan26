@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LegalAI</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body class="bg">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">⚖️</div>
+      <div class="brand-text">
+        <div class="title">LegalAI</div>
+        <div class="subtitle">Contract Analyzer</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="/dashboard" class="nav-item">Dashboard</a>
+      <a href="/analyze" class="nav-item">Analyze</a>
+      <a href="/history" class="nav-item">History</a>
+    </nav>
+    <div class="user"><span class="user-name">{{ (user and user.name) or 'Guest' }}</span></div>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
