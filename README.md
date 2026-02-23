@@ -2,6 +2,37 @@
 
 An intelligent system for automated legal contract analysis using LLMs, vector databases, and multi-agent expert review.
 
+## 📸 Demo
+
+### Video Walkthrough
+![Demo Video](docs/videos/demo.gif)
+*Full workflow demonstration - Upload, Analysis, and Results*
+
+### Screenshots
+
+<details>
+<summary>Click to view screenshots</summary>
+
+#### Upload Interface
+![Upload Page](docs/images/upload.png)
+*Clean drag-and-drop interface for PDF uploads*
+
+#### Real-time Processing
+![Processing Pipeline](docs/images/processing.png)
+*Live progress tracking through 5 analysis stages*
+
+#### Analysis Results
+![Results Dashboard](docs/images/results.png)
+*Contract summary with expert analyses*
+
+#### Detailed Analysis
+![Analysis Detail](docs/images/analysis-detail.png)
+*In-depth findings, risks, and recommendations*
+
+</details>
+
+---
+
 ## 🌟 Features
 
 - **Automated Contract Classification** - Identifies contract type and industry using Phi-3 Mini
