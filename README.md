@@ -4,11 +4,6 @@ An intelligent system for automated legal contract analysis using LLMs, vector d
 
 ## 📸 Demo
 
-### Video Walkthrough
-https://github.com/AabidMK/AI-Tool-to-Read-and-Analyze-Legal-Contracts-Automatically_Infosys_Internship_Jan26/assets/your-user-id/demo.mp4
-
-*Full workflow demonstration - Upload, Analysis, and Results*
-
 ### Screenshots
 
 #### Upload Interface
@@ -18,6 +13,11 @@ https://github.com/AabidMK/AI-Tool-to-Read-and-Analyze-Legal-Contracts-Automatic
 #### Analysis Results
 ![Results Dashboard](docs/images/results.png)
 *Contract summary with expert analyses and detailed findings*
+
+### 🎥 Video Demo
+[▶️ Watch Full Demo Video](https://github.com/AabidMK/AI-Tool-to-Read-and-Analyze-Legal-Contracts-Automatically_Infosys_Internship_Jan26/blob/lakshana_g/docs/videos/demo.mp4)
+
+*Click to view the complete workflow demonstration*
 
 ---
 
