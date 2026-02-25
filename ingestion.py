@@ -68,3 +68,4 @@ Clause Text: {clause.get('clause_text')}
 vectorstore.add_documents(documents)
 
 print(f"Ingested {len(documents)} clauses into {collection_name}")
+

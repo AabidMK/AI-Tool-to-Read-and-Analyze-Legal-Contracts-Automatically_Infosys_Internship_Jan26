@@ -19,6 +19,7 @@ def classify_contract_node(state):
 You are a legal contract classifier.
 
 Return output strictly in JSON:
+
 {{
   "contract_type": "...",
   "industry": "..."

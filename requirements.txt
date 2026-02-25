@@ -3,3 +3,6 @@ langchain-community
 langchain-core
 langchain-qdrant sentence-transformers
 langchain-huggingface
+fastapi
+reportlab
+# i think u generally need 3.13 version while production / deployment 
