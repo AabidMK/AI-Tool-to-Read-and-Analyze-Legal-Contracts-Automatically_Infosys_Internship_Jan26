@@ -1,0 +1,54 @@
+[{
+        "contract_type": "Service Agreement",
+        "clauses": [{
+                "clause_title": "Scope of Services",
+                "clause_text": "The Service Provider agrees to perform the services described in Schedule A in a competent and professional manner consistent with industry standards.",
+                "metadata": {
+                    "jurisdiction": "India",
+                    "last_updated": "2026-01-07"
+                }
+            },
+            {
+                "clause_title": "Term and Termination",
+                "clause_text": "This Agreement shall commence on the Effective Date and continue until terminated by either party upon thirty (30) days’ prior written notice to the other party.",
+                "metadata": {
+                    "jurisdiction": "India",
+                    "last_updated": "2026-01-07"
+                }
+            }
+        ]
+    },
+    {
+        "contract_type": "Non-Disclosure Agreement",
+        "clauses": [{
+            "clause_title": "Confidential Information",
+            "clause_text": "All confidential information disclosed shall be kept strictly confidential and shall not be disclosed to third parties.",
+            "metadata": {
+                "jurisdiction": "India",
+                "last_updated": "2026-01-07"
+            }
+        }]
+    },
+    {
+        "contract_type": "Software License Agreement",
+        "clauses": [{
+            "clause_title": "License Grant",
+            "clause_text": "The Licensor grants the Licensee a non-exclusive, non-transferable license to use the software.",
+            "metadata": {
+                "jurisdiction": "India",
+                "last_updated": "2026-01-07"
+            }
+        }]
+    },
+    {
+        "contract_type": "Lease Agreement",
+        "clauses": [{
+            "clause_title": "Lease Term",
+            "clause_text": "The lease shall be for a term of eleven (11) months commencing from the start date.",
+            "metadata": {
+                "jurisdiction": "India",
+                "last_updated": "2026-01-07"
+            }
+        }]
+    }
+]

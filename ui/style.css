@@ -1,0 +1,72 @@
+body {
+    font-family: Arial;
+    background: #0f172a;
+    margin: 0;
+    color: white;
+}
+
+.dashboard {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin-bottom: 5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.card {
+    background: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.report {
+    grid-column: span 2;
+}
+
+button {
+    background: #38bdf8;
+    border: none;
+    padding: 10px 18px;
+    margin-top: 10px;
+    color: black;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0ea5e9;
+}
+
+input {
+    margin-top: 10px;
+}
+
+pre {
+    white-space: pre-wrap;
+    background: #020617;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+#statusBox {
+    background: #020617;
+    padding: 10px;
+    border-radius: 6px;
+}

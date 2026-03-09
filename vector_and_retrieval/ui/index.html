@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>AI Contract Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <header>
+            <h1>AI Contract Analyzer</h1>
+            <p>Automated Legal Contract Intelligence</p>
+        </header>
+
+        <div class="grid">
+
+            <!-- Upload -->
+            <div class="card">
+
+                <h2>Upload Contract</h2>
+
+                <input type="file" id="fileInput">
+
+                <button onclick="uploadFile()">Analyze</button>
+
+                <p id="taskDisplay"></p>
+
+            </div>
+
+
+            <!-- Status -->
+            <div class="card">
+
+                <h2>Live Processing Status</h2>
+
+                <div id="statusBox">
+                    Waiting for upload...
+                </div>
+
+            </div>
+
+
+            <!-- Vector Search -->
+            <div class="card">
+
+                <h2>Vector Search Insights</h2>
+
+                <pre id="vectorInsights"></pre>
+
+            </div>
+
+
+            <!-- Role Analysis -->
+            <div class="card">
+
+                <h2>Role-Based Expert Analysis</h2>
+
+                <pre id="roleAnalysis"></pre>
+
+            </div>
+
+
+            <!-- Final Report -->
+            <div class="card report">
+
+                <h2>Final Legal Report</h2>
+
+                <pre id="finalReport"></pre>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
